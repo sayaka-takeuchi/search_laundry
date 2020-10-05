@@ -7,6 +7,8 @@ class Laundry < ApplicationRecord
     validates :opening_date
     validates :open_time
     validates :close_time
+  end
+  with_options inclusion: {in: [true, false]} do
     validates :shoe_washing
     validates :futon_washing
     validates :dryer
