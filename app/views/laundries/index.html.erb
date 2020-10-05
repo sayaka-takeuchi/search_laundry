@@ -1,0 +1,17 @@
+<div class="store-contents">
+  <ul class="store-lists">
+    <% @laundries.each do |laundry| %>
+    <li class="list">
+      <div class="store-info">
+        <p>店舗名</p>
+        <%= laundry.name %>
+        <p>住所</p>
+        <%= laundry.address %>
+        <p>オープン日</p>
+        <%= laundry.opening_date %> 
+        <%= link_to '詳細', "#", class: 'btn' %>
+      </div>
+    </li>
+    <% end %> 
+  </ul>
+</div>
