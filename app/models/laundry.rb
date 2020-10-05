@@ -1,5 +1,5 @@
 class Laundry < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
   has_many :comments
   with_options presence: true do
     validates :name
@@ -7,7 +7,7 @@ class Laundry < ApplicationRecord
     validates :opening_date
     validates :open_time
     validates :close_time
-    validates :show_washing
+    validates :shoe_washing
     validates :futon_washing
     validates :dryer
     validates :washing_machine

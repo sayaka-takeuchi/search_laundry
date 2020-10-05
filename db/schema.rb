@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_04_130343) do
     t.date "opening_date", null: false
     t.time "open_time", null: false
     t.time "close_time", null: false
-    t.boolean "show_washing", default: false, null: false
+    t.boolean "shoe_washing", default: false, null: false
     t.boolean "futon_washing", default: false, null: false
     t.boolean "dryer", default: true, null: false
     t.boolean "washing_machine", default: false, null: false

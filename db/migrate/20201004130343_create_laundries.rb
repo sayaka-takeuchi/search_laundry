@@ -6,7 +6,7 @@ class CreateLaundries < ActiveRecord::Migration[6.0]
       t.date :opening_date,       null: false
       t.time :open_time,          null: false
       t.time :close_time,         null: false
-      t.boolean :show_washing,    null: false, default: false
+      t.boolean :shoe_washing,    null: false, default: false
       t.boolean :futon_washing,   null: false, default: false
       t.boolean :dryer,           null: false, default: true
       t.boolean :washing_machine, null: false, default: false
