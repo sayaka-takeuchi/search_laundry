@@ -4,12 +4,30 @@
     <title>SearchLaundry</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <h1>
+        <%= link_to 'SearchLaundry', root_path, class: 'header_title' %>
+      </h1>
+      <nav class="user_nav">
+        <ul>
+          <li class="header-list">
+            <%= link_to "ログイン", "#" %>
+            <%= link_to "新規登録", '#', method: :delete %>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <p>
+        Copyright SearchLaundry 2020.
+      </p>
+    </footer>
   </body>
 </html>

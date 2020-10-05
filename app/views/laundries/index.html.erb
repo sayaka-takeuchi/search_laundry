@@ -1,0 +1,32 @@
+<div class="search-area">
+  <div class="search-form">
+    <h1>店舗検索</h1>
+    <%= search_form_for @laundry, url: search_laundries_path do |f| %>
+      <%= f.label :name_cont, '店舗名:' %>
+      <%= f.text_field :name_cont, placeholder: '店舗名を入力', class: 'text-input' %>
+      <br>
+      <%= f.label :status_true, '機能:' %>
+        <%= f.check_box :shoe_washing_eq_any, {multiple: true}, 1, '' %> 靴を洗う
+        <%= f.check_box :futon_washing_eq_any, {multiple: true}, 1, ''%> 敷布団を洗う
+        <%= f.check_box :dryer_eq_any, {multiple: true}, 1, '' %> 乾燥のみ
+        <%= f.check_box :washing_machine_eq_any, {multiple: true}, 1, '' %> 洗濯のみ
+      <%= f.submit '検索', class: 'submit-btn' %>
+    <% end %>
+  </div>
+</div>
+<div class="store-contents">
+  <ul class="store-lists">
+    <% @laundries.each do |laundry| %>
+    <li class="list">
+      <div class="store-info">
+        <p>店舗名</p>
+        <%= laundry.name %>
+        <p>住所</p>
+        <%= laundry.address %>
+        <br>
+        <%= link_to '店舗詳細', "#", class: 'show-btn' %>
+      </div>
+    </li>
+    <% end %> 
+  </ul>
+</div>
