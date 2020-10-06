@@ -1,0 +1,80 @@
+/* 登録画面 */
+.form-wrap {
+  width: 100%;
+  background-color:  	 #fff;
+  padding-bottom: 70px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.form-wrap h2 {
+  width: 70%;
+  font-size: 20px;
+  margin: 0 auto 20px;
+  border-bottom: 1px solid gray;
+  padding: 20px;
+
+}
+.message {
+  color: #f00;
+}
+
+.field {
+  margin-top: 15px;
+}
+
+.indispensable {
+  border: 1px solid #000;
+  font-size: 12px;
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.info-text {
+  height: 45px;
+  width: 250px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.input-name {
+  margin-bottom: 10px;
+  height: 45px;
+  width: 150px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.form-info-text {
+  font-size: 15px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.actions, .send-sign-up  {
+  height: 70px;
+  width: 170px;
+  color: #fff;
+  border: none;
+  margin: 35px 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.actions {
+  background-color: 	#E95B6B;
+}
+
+/* 新規登録ページ遷移ボタン(その他は登録画面と共有） */
+.send-sign-up {
+  display: block;
+  margin: 5px auto 0;
+  background-color: #3333FF;
+  text-decoration: none;
+  padding: 18px 0;
+}
