@@ -25,7 +25,7 @@
         <%= laundry.address %>
         <br>
         <div class="btn">
-          <%= link_to '詳細', "#", class: 'show-btn' %>
+          <%= link_to '詳細', laundry_path(laundry.id), class: 'show-btn' %>
           <%= link_to '編集', "#", class: 'edit-btn' %>
           <%= link_to '削除', "#", class: 'delete-btn' %>
         </div>
