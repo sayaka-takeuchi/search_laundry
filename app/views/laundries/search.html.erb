@@ -9,9 +9,11 @@
         <%= laundry.name %>
         <p>住所</p>
         <%= laundry.address %>
-        <p>オープン日</p>
-        <%= laundry.opening_date %> 
-        <%= link_to '詳細', "#", class: 'btn' %>
+        <div class="btn">
+          <%= link_to '詳細', "#", class: 'show-btn' %>
+          <%= link_to '編集', "#", class: 'edit-btn' %>
+          <%= link_to '削除', "#", class: 'delete-btn' %>
+        </div>
       </div>
     </li>
     <% end %> 
