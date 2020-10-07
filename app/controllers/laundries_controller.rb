@@ -9,6 +9,10 @@ class LaundriesController < ApplicationController
     @results = @laundry.result
   end
 
+  def show
+    @laundry = Laundry.find(params[:id])
+  end
+
   private
 
   def search_laundry
