@@ -1,7 +1,8 @@
 class Laundry < ApplicationRecord
-  belongs_to :user
   has_many :comments
+  has_one_attached :image
   with_options presence: true do
+    validates :image
     validates :name
     validates :address
     validates :opening_date
