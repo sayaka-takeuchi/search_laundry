@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <th class="detail-store">営業時間</th>
-          <td class="detail-value"><%= @laundry.open_time.strftime('%-H:%M')%> 〜 <%= @laundry.close_time.strftime('%-H:%M')%> </td>
+          <td class="detail-value"><%= l @laundry.open_time %> 〜 <%= l @laundry.close_time %> </td>
         </tr>
       </tbody>
     </table>
