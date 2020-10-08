@@ -7,6 +7,13 @@ ja:
         last_name: 名前
         first_name_kana: 苗字(カナ)
         last_name_kana: 名前(カナ)
+      laundry:
+        image: 画像
+        name: 店名
+        address: 店舗住所
+        opening_date: オープン日
+        open_time: 営業時間(開店時間)
+        close_time: 営業時間(閉店時間)
   time:
     formats:
       default: '%-H:%M'
