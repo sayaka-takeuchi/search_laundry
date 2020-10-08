@@ -1,3 +1,7 @@
+<div class="flash-message">
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
 <div class="search-area">
   <div class="search-form">
     <h1>店舗検索</h1>
@@ -32,8 +36,10 @@
         <br>
         <div class="btn">
           <%= link_to '詳細', laundry_path(laundry.id), class: 'show-btn' %>
-          <%= link_to '編集', "#", class: 'edit-btn' %>
-          <%= link_to '削除', "#", class: 'delete-btn' %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to '編集', "#", class: 'edit-btn' %>
+            <%= link_to '削除', laundry_path(laundry.id), class: 'delete-btn', method: :delete, data: { confirm: '削除を実行します。よろしければOKをクリックしてください。' } %>
+          <% end %>
         </div>
       </div>
     </li>

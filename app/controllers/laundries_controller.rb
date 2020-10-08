@@ -26,6 +26,15 @@ class LaundriesController < ApplicationController
     @laundry = Laundry.find(params[:id])
   end
 
+  def destroy
+    laundry = Laundry.find(params[:id])
+    if laundry.destroy
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      redirect_to root_path, alert: "削除が失敗しました"
+    end
+  end
+
   private
 
   def search_laundry
