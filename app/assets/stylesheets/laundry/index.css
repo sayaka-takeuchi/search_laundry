@@ -38,6 +38,23 @@ color:#666;
   overflow-x: scroll;
 }
 
+.store-contents-info {
+  margin: 20px 50px ;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-contents-title, .send-new-page {
+  font-size: 20px;
+}
+
+.send-new-page {
+  text-decoration: none;
+  color: #000;
+  margin-left: 10px;
+}
+
 .store-lists {
   width: 100%;
   display: flex;
@@ -49,7 +66,6 @@ color:#666;
   width: 30%;
   height: 150px;
   margin: 8px;
-  
 }
 
 .store-info {

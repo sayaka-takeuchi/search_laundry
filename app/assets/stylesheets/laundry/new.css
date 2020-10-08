@@ -1,0 +1,43 @@
+/* .new-store-contentsは.store-show(show.css)と共有 */
+.new-store-contents {
+  justify-content: center;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 15px 0;
+}
+
+.store-text {
+  width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  font-size: 18px;
+}
+
+.time-field {
+  /* display: flex; */
+}
+
+.store-reg-btn {
+  height: 70px;
+  width: 170px;
+  color: #fff;
+  border: none;
+  margin: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color:	#E95B6B;
+}
+
+.back-btn { 
+  text-decoration: none;
+  color: #fff;
+  background-color: gray;
+  padding: 25px 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-left: 10px;
+}

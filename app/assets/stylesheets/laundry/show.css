@@ -1,4 +1,6 @@
-.store-show {
+/* new-store-contentsは店舗新規登録画面  */
+.store-show,
+.new-store-contents {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -8,7 +10,6 @@
 
 .text, .comments {
   font-size: 20px;
-  margin-bottom: 10px;
   margin-bottom: 20px;
   border-bottom: 1px solid gray;
   padding: 20px;
