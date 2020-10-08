@@ -13,6 +13,7 @@
   margin-bottom: 20px;
   border-bottom: 1px solid gray;
   padding: 20px;
+  text-align: center;
 }
 
 .text {
@@ -20,14 +21,23 @@
 }
 
 .store-box {
-  background-color:#FEF9CC;
   width: 70vw;
   padding: 10vh 7vh;
   margin-bottom: 30px;
+  text-align: center;
+}
+
+.store-image {
+  width: 80%;
+  height: 80%;
 }
 
 .detail-table {
   width: 100%;
+}
+
+.detail-table tr:nth-child(odd) {
+  background-color: #eee
 }
 
 .detail-value, .detail-store {
