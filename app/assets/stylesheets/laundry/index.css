@@ -1,4 +1,9 @@
 
+.flash-message {
+  text-align: center;
+  color: #ff0000;
+}
+
 .search-area h1 {
   font-size: 20px;
   margin-bottom: 5px;
