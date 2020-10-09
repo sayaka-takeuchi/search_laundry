@@ -1,24 +1,31 @@
-<h1>検索結果</h1>
-
-<% if @results.length != 0 %>
-  <ul class="store-lists">
-    <% @results.each do |laundry| %>
-    <li class="list">
-      <div class="store-info">
-        <p>店舗名</p>
-        <%= laundry.name %>
-        <p>住所</p>
-        <%= laundry.address %>
-        <div class="btn">
-          <%= link_to '詳細', "#", class: 'show-btn' %>
-          <%= link_to '編集', "#", class: 'edit-btn' %>
-          <%= link_to '削除', "#", class: 'delete-btn' %>
+<%# cssは店舗一覧表示のものと併用
+app/assets/stylesheets/laundry/index.css %>
+<div class="store-contents-info">
+  <h1 class="store-contents-title">検索結果<h1>
+</div>
+<div class="store-contents">
+  <% if @results.length != 0 %>
+    <ul class="store-lists">
+      <% @results.each do |laundry| %>
+      <li class="list">
+        <div class="store-info">
+          <p>店舗名</p>
+          <%= laundry.name %>
+          <p>住所</p>
+          <%= laundry.address %>
+          <div class="btn">
+            <%= link_to '詳細', laundry_path(laundry.id), class: 'show-btn' %>
+            <% if user_signed_in? && current_user.admin? %>
+              <%= link_to '編集', edit_laundry_path(laundry.id), class: 'edit-btn' %>
+              <%= link_to '削除', laundry_path(laundry.id), class: 'delete-btn', method: :delete, data: { confirm: '削除を実行します。よろしければOKをクリックしてください。' } %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </li>
-    <% end %> 
-  </ul>
-<% else %>
-    該当店舗はありませんでした
-<% end %>
-<%= link_to 'トップページへ戻る', root_path %>
+      </li>
+      <% end %> 
+    </ul>
+  <% else %>
+      該当店舗はありませんでした
+  <% end %>
+</div>
+<%= link_to '＜＜一覧画面へ戻る', root_path, class: 'back-top' %>
