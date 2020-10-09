@@ -37,7 +37,7 @@
         <div class="btn">
           <%= link_to '詳細', laundry_path(laundry.id), class: 'show-btn' %>
           <% if user_signed_in? && current_user.admin? %>
-            <%= link_to '編集', "#", class: 'edit-btn' %>
+            <%= link_to '編集', edit_laundry_path(laundry.id), class: 'edit-btn' %>
             <%= link_to '削除', laundry_path(laundry.id), class: 'delete-btn', method: :delete, data: { confirm: '削除を実行します。よろしければOKをクリックしてください。' } %>
           <% end %>
         </div>
