@@ -1,0 +1,78 @@
+<%# cssは商品出品のものを併用
+app/assets/stylesheets/laundry/new.css %>
+
+<div class="new-store-contents">
+  <h1 class="text">
+    店舗編集
+  </h1>
+  <%= form_with model:@laundry, url: laundry_path(@laundry.id), local: true do |f| %>
+  <%= render 'error_messages', model: f.object %>
+  <%# 店舗画像 %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+    店舗画像
+    <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image %>
+    </div>
+  </div>
+  <%# 店舗名 %>
+  <div class="store-name">
+    <div class="weight-bold-text">
+    店舗名
+    <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :name, class: 'store-text', placeholder: 'コインランドリー○○店'%>
+  </div>
+  <%# 店舗住所 %>
+  <div class="store-address">
+    <div class="weight-bold-text">
+    店舗住所
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :address, class: 'store-text', placeholder: '愛知県名古屋市１−１' %>
+  </div>
+　<%# オープン日 %>
+  <div class="store-opening-day">
+    <div class="weight-bold-text">
+    オープン日
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.date_select :opening_date, {prompt: '--', start_year: Time.now.year, end_year: 2000} %>
+  </div>
+  <%# 営業時間 %>
+  <div class="store-opening-time">
+    <div class="weight-bold-text">
+    営業時間
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="time-field">
+      <%= f.time_select :open_time, prompt: true, ignore_date: true %> 〜
+      <%= f.time_select :close_time, prompt: true, ignore_date: true %>
+    </div>
+  </div>
+  <%# 店舗の特徴 %>
+  <div class="store-character">
+    <div class="weight-bold-text">
+    店舗の特徴(当てはまるものにチェック)
+    </div>
+    <%= f.label :shoe_washing, '靴洗濯乾燥機' %>
+    <%= f.check_box :shoe_washing, {}, "true", "false" %>
+    <br />
+    <%= f.label :futon_washing, '布団洗濯乾燥機' %>
+    <%= f.check_box :futon_washing,{}, "true", "false" %>
+    <br />
+    <%= f.label :dryer, '乾燥機' %>
+    <%= f.check_box :dryer,{checked: false}, "true", "false" %>
+    <br />
+    <%= f.label :washing_machine, '洗濯機' %>
+    <%= f.check_box :washing_machine,{}, "true", "false" %>
+  </div>
+  <%= f.submit '更新', class: 'store-reg-btn' %>
+  <%= link_to 'もどる', root_path, class: 'back-btn' %>
+<% end %>
+</div>

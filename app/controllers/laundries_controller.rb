@@ -1,5 +1,7 @@
 class LaundriesController < ApplicationController
   before_action :search_laundry, only: [:index, :search]
+  before_action :set_laundry, only: [:show, :edit, :update]
+  before_action :check_user, except: [:index, :show]
 
   def index
     @laundries = Laundry.order('opening_date DESC')
@@ -23,7 +25,6 @@ class LaundriesController < ApplicationController
   end
 
   def show
-    @laundry = Laundry.find(params[:id])
   end
 
   def destroy
@@ -35,7 +36,26 @@ class LaundriesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @laundry.update(laundry_params)
+      redirect_to action: :show
+    else 
+      render :edit
+    end
+  end
+
   private
+
+  def check_user
+    redirect_to root_path unless user_signed_in? && current_user.admin?
+  end
+
+  def set_laundry
+    @laundry = Laundry.find(params[:id])
+  end
 
   def search_laundry
     @laundry = Laundry.ransack(params[:q])

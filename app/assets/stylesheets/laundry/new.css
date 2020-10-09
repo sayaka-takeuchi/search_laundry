@@ -1,4 +1,6 @@
-/* .new-store-contentsは.store-show(show.css)と共有 */
+/* .new-store-contentsのcss指定は.store-showと共有 
+app/assets/stylesheets/laundry/new.css */
+
 .new-store-contents {
   justify-content: center;
 }
