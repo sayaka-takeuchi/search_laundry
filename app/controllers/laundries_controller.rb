@@ -1,7 +1,7 @@
 class LaundriesController < ApplicationController
   before_action :search_laundry, only: [:index, :search]
   before_action :set_laundry, only: [:show, :edit, :update]
-  before_action :check_user, except: [:index, :show]
+  before_action :check_user, except: [:index, :show, :search]
 
   def index
     @laundries = Laundry.order('opening_date DESC')
