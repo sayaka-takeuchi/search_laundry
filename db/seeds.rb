@@ -10,7 +10,7 @@
     dryer: %w(true false).sample,
     washing_machine: %w(true false).sample,
     ) 
-  laundry.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+  laundry.image.attach(io: File.open('app/assets/images/image.jpg'), filename: 'test_image.jpg')
   laundry.save
 end
 User.create(
