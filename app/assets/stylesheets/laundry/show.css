@@ -8,15 +8,12 @@
   padding: 5vh 0;
 }
 
-.text, .comments {
+.text, .comment-title {
   font-size: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid gray;
   padding: 20px;
   text-align: center;
-}
-
-.text {
   width: 70%;
 }
 
@@ -30,6 +27,7 @@
 .store-image {
   width: 80%;
   height: 80%;
+  margin-bottom: 40px;
 }
 
 .detail-table {
@@ -53,6 +51,7 @@
   padding-left: 10px;
 }
 
+/* コメント機能 */
 .comment-box {
   width: 70%;
 }
@@ -92,4 +91,24 @@
 
 .comments {
   width: 100%;
+  text-align: center;
+}
+
+/* コメント表示欄 */
+.comment-title {
+width: 100%;
+}
+
+.comment-area {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.contributor {
+  color: gray;
+  font-size: 10px;
 }
