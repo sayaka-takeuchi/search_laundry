@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <th class="detail-store">営業時間</th>
-          <td class="detail-value"><%= l @laundry.open_time %> 〜 <%= l @laundry.close_time %> </td>
+          <td class="detail-value"><%= l @laundry.open_time, format: :short %> 〜 <%= l @laundry.close_time, format: :short %> </td>
         </tr>
       </tbody>
     </table>
@@ -39,7 +39,18 @@
       <p class="comment-warn">ログインユーザーのみコメント投稿ができます。</p>
     <% end %>
     <div class="comments">
-      <h3>コメント一覧</h3>
+      <h2 class="comment-title">コメント一覧</h2>
+      <div class="comment-area" id="comment-area">
+        <% if @comments %>
+          <% @comments.reverse.each do |comment| %>
+            <div class="comment">
+              <p><%= comment.text %></p>
+              <span class="contributor"><%= "by #{comment.user.nickname}" %></span>
+              <span class="contributor"><%= "at :#{l comment.created_at}" %></span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -25,6 +25,7 @@ class LaundriesController < ApplicationController
   end
 
   def show
+    @comments = @laundry.comments.includes(:user)
     @comment = Comment.new
   end
 

@@ -16,4 +16,5 @@ ja:
         close_time: 営業時間(閉店時間)
   time:
     formats:
-      default: '%-H:%M'
+      default: '%Y/%m/%d %-H:%M'
+      short: '%-H:%M'
