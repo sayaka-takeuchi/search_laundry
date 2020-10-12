@@ -15,4 +15,13 @@ class Laundry < ApplicationRecord
     validates :dryer
     validates :washing_machine
   end
+
+  def previous
+    Laundry.where('id<?',self.id).order('id DESC').first
+  end
+
+  def next
+    Laundry.where('id>?',self.id).order('id ASC').first
+  end
+
 end

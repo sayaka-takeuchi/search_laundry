@@ -1,5 +1,6 @@
 <div class="store-show">
   <h2 class="text">店舗詳細</h2>
+  <%# 店舗情報 %>
   <div class="store-box">
     <%= image_tag @laundry.image.variant(resize: '300x300'), class: 'store-image' %>
     <table class="detail-table">
@@ -14,15 +15,29 @@
         </tr>
         <tr>
           <th class="detail-store">オープン日</th>
-          <td class="detail-value"><%= @laundry.opening_date %></td>
+          <td class="detail-value"><%= l @laundry.opening_date %></td>
         </tr>
         <tr>
           <th class="detail-store">営業時間</th>
-          <td class="detail-value"><%= l @laundry.open_time, format: :short %> 〜 <%= l @laundry.close_time, format: :short %> </td>
+            <% if @laundry.open_time == @laundry.close_time %>
+              <td class="detail-value">24時間営業</td>
+            <% else %>
+              <td class="detail-value"><%= l @laundry.open_time, format: :short %> 〜 <%= l @laundry.close_time, format: :short %> </td>
+            <% end %>
         </tr>
       </tbody>
     </table>
   </div>
+  <%# 店舗詳細ページ切り替え %>
+  <div class="links">
+    <% if @laundry.previous.present?%>
+      <%= link_to "<< 前の店舗", laundry_path(@laundry.previous), class: "prev-btn"%>
+    <% end %>
+    <% if @laundry.next.present?%>
+      <%= link_to "次の店舗 >>", laundry_path(@laundry.next), class: "next-btn"%>
+    <% end %>
+  </div>
+  <%# コメント欄 %>
   <div class="comment-box">
     <% if current_user %>
       <div class="comment-form">
