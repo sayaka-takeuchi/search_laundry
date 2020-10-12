@@ -12,7 +12,6 @@
 .search-form {
   background-color:  #ffffe0;
   width: 80%;
-  height: 150px;
   margin: 10px auto;
   padding: 20px;
   text-align: center;
@@ -32,6 +31,7 @@
   color:#fff;
   background-color:#7fbfff;
   font-size:16px;
+  margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -83,7 +83,7 @@ color:#666;
 }
 
 .btn {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .show-btn, .edit-btn, .delete-btn {
@@ -92,7 +92,7 @@ color:#666;
   text-align: center;
   padding: 10px 15px;
   display: inline-block;
-  border-radius:50%;
+  border-radius: 50%;
   color: #fff;
   background-color: #fd9535;
 }

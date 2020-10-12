@@ -9,11 +9,15 @@
       <%= f.label :name_cont, '店舗名:' %>
       <%= f.text_field :name_cont, placeholder: '店舗名を入力', class: 'text-input' %>
       <br>
+      <%= f.label :address_cont, '地域名:' %>
+      <%= f.text_field :address_cont, placeholder: '例)名古屋市', class: 'text-input' %>
+      <br>
       <%= f.label :status_true, '機能:' %>
         <%= f.check_box :shoe_washing_eq_any, {multiple: true}, 1, '' %> 靴を洗う
         <%= f.check_box :futon_washing_eq_any, {multiple: true}, 1, ''%> 敷布団を洗う
         <%= f.check_box :dryer_eq_any, {multiple: true}, 1, '' %> 乾燥のみ
         <%= f.check_box :washing_machine_eq_any, {multiple: true}, 1, '' %> 洗濯のみ
+      <br>
       <%= f.submit '検索', class: 'submit-btn' %>
     <% end %>
   </div>
