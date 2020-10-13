@@ -4,10 +4,13 @@
     <title>SearchLaundry</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API'] %>">
+    </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
   <body>
     <header class="header">
