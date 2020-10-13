@@ -51,6 +51,12 @@
   padding-left: 10px;
 }
 
+#map {
+height: 500px;
+width: 65%;
+margin-bottom: 30px;
+}
+
 .links {
   margin-bottom: 20px;
   width: 70%;

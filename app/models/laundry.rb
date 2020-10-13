@@ -1,4 +1,7 @@
 class Laundry < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   has_many :comments
   has_one_attached :image
   with_options presence: true do
@@ -23,5 +26,4 @@ class Laundry < ApplicationRecord
   def next
     Laundry.where('id>?',self.id).order('id ASC').first
   end
-
 end
