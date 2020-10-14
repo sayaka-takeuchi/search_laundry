@@ -2,8 +2,9 @@ footer {
   height: 50px;
   margin: 0 auto;
   padding: 10px;
-  background-color: whitesmoke;
-  color: gray;
+  background-image: url('image.jpg');
+  background-size: cover;
+  color:#000;
 }
 
 footer p {

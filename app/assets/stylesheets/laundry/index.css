@@ -1,7 +1,22 @@
+.main,
+.store-show,
+.new-store-contents,
+.new-store-contents, 
+.form-wrap {
+  background-color: #f9f9fa;
+}
+
+.main {
+  padding: 10px 0;
+}
 
 .flash-message {
   text-align: center;
   color: #ff0000;
+}
+
+.search-area {
+  padding-top: 10px;
 }
 
 .search-area h1 {
@@ -15,7 +30,8 @@
   margin: 10px auto;
   padding: 20px;
   text-align: center;
-  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 6px 6px 9px #ddd;
 }
 
 .text-input {
@@ -72,6 +88,8 @@ color:#666;
   height: 200px;
   margin: 8px;
   border: 1px solid gray;
+  background-color: #fff;
+  border-radius: 3px;
 }
 
 .store-info {
@@ -86,19 +104,35 @@ color:#666;
   padding: 20px 0;
 }
 
-.show-btn, .edit-btn, .delete-btn {
+.show-btn {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  padding: 10px 15px;
+  padding: 8px 30px;
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 5%;
   color: #fff;
-  background-color: #fd9535;
+  background-color: #f68b1f;
+  border-bottom: 5px solid #d56f09;
+  margin-bottom: 5px;
 }
 
-.btn :hover {
-  background-color: royalblue;
+.show-btn:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #fd9535;
+  border-bottom: 2px solid  #d56f09;
+}
+
+.hidden-btn a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+}
+
+.hidden-btn a:hover {
+  background-color: #7fbfff;
+  color: #fff;
 }
 
 .store-info p {

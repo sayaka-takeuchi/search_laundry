@@ -1,16 +1,17 @@
 header {
   width: 100%;
   height: 100px;
-  padding: 30px 4% 10px;
+  padding: 30px 4%;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: whitesmoke;
+  background-image: url('image.jpg');
+  background-size: cover;
 }
 
-header a {
- color: black;
+header a, .user_name, .header-list {
+color: #000;
  text-decoration: none;
  margin: 0 10px;
 }
