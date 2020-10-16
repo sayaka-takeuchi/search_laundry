@@ -19,11 +19,19 @@ class Laundry < ApplicationRecord
     validates :washing_machine
   end
 
+  # def previous
+  #   Laundry.where('id<?',self.id).order('opening_date DESC').first
+  # end
+
+  # def next
+  #   Laundry.where('id>?',self.id).order('id ASC').first
+  # end
+
   def previous
-    Laundry.where('id<?',self.id).order('id DESC').first
+    Laundry.where('opening_date<?',self.opening_date).order('opening_date DESC').first
   end
 
   def next
-    Laundry.where('id>?',self.id).order('id ASC').first
+    Laundry.where('opening_date>?',self.opening_date).order('opening_date ASC').first
   end
 end

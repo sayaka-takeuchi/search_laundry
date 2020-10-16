@@ -32,10 +32,10 @@
   <%# 店舗詳細ページ切り替え %>
   <div class="links">
     <% if @laundry.previous.present?%>
-      <%= link_to "<< 前の店舗", laundry_path(@laundry.previous), class: "prev-btn"%>
+      <%= link_to "次の店舗 >>", laundry_path(@laundry.previous), class: "next-btn"%>
     <% end %>
     <% if @laundry.next.present?%>
-      <%= link_to "次の店舗 >>", laundry_path(@laundry.next), class: "next-btn"%>
+      <%= link_to "<< 前の店舗", laundry_path(@laundry.next), class: "prev-btn"%>
     <% end %>
   </div>
   <%# コメント欄 %>
