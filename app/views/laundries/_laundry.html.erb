@@ -1,0 +1,17 @@
+<li class="list">
+  <div class="store-info">
+    <p>店舗名</p>
+    <%= laundry.name %>
+    <p>住所</p>
+    <%= laundry.address %>
+    <div class="btn">
+      <%= link_to '詳細', laundry_path(laundry.id), class: 'show-btn' %>
+      <% if user_signed_in? && current_user.admin? %>
+        <div class="hidden-btn">
+        <%= link_to '編集', edit_laundry_path(laundry.id) %>
+        <%= link_to '削除', laundry_path(laundry.id), method: :delete, data: { confirm: '削除を実行します。よろしければOKをクリックしてください。' } %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</li>
