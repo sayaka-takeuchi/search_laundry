@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: search_laundry_production
-  username: search_laundry
-  password: <%= ENV['SEARCH_LAUNDRY_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
