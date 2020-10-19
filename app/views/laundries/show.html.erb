@@ -25,9 +25,38 @@
               <td class="detail-value"><%= l @laundry.open_time, format: :short %> 〜 <%= l @laundry.close_time, format: :short %> </td>
             <% end %>
         </tr>
+        <tr>
+          <th class="detail-store">
+            靴洗濯乾燥機<br>
+            (1回400円)
+          </th>
+          <td class="detail-value"><%= @laundry.shoe_washing ? '○' : '×' %></td>
+        </tr>
+        <tr>
+          <th class="detail-store">
+            布団洗濯乾燥機<br>
+            (1回1,000円)
+          </th>
+          <td class="detail-value"><%= @laundry.futon_washing ? '○' : '×' %></td>
+        </tr>
+        <tr>
+          <th class="detail-store">
+            乾燥機<br>
+            (10分100円)
+          </th>
+          <td class="detail-value"><%= @laundry.dryer ? '○' : '×' %></td>
+        </tr>
+        <tr>
+          <th class="detail-store">
+            洗濯機<br>
+            (1回500円)
+          </th>
+          <td class="detail-value"><%= @laundry.washing_machine ? '○' : '×' %></td>
+        </tr>
       </tbody>
     </table>
   </div>
+  <%# 地図を表示 %>
   <div id='map'></div>
   <%# 店舗詳細ページ切り替え %>
   <div class="links">
