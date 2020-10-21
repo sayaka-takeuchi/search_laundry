@@ -1,8 +1,7 @@
 class Laundry < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one_attached :image
   with_options presence: true do
     validates :image

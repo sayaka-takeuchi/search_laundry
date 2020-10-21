@@ -74,3 +74,4 @@ gem 'faker'
 gem 'geocoder'
 gem 'gon'
 gem 'aws-sdk-s3', require: false
+gem 'active_hash'
