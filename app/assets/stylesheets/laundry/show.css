@@ -58,6 +58,7 @@ width: 65%;
 margin-bottom: 30px;
 }
 
+/* 店舗切り替え */
 .links {
   margin-bottom: 20px;
   width: 70%;
@@ -87,7 +88,7 @@ margin-bottom: 30px;
   color: red;
 }
 
-/* コメント機能 */
+/* 口コミ投稿機能 */
 .comment-box {
   width: 70%;
 }
@@ -96,15 +97,66 @@ margin-bottom: 30px;
   text-align: center;
 }
 
-.comment-form strong {
-  font-size: 30px;
+/* 口コミ投稿欄 */
+.acd-check{
+  display: none;
+}
+
+.acd-label::before{
+  content:"＋ "
+}
+
+.acd-check:checked + .acd-label::before{
+  content:"ー "
+}
+
+.acd-label {
+  display: block;
+  margin-bottom: 20px;
+  padding : 15px;
+  line-height: 1;
+  color :#fff;
+  background : #3CCACE;
+  cursor :pointer;
+}
+
+/* 口コミ投稿欄（アコーディオン前） */
+.form{
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .5s;
+  visibility: hidden;
+  background-color: #ddeeee;
+  border-radius: 5px;
+}
+/* 口コミ投稿欄（アコーディオン後） */
+.acd-check:checked + .acd-label + .form{
+  height: 400px;
+  opacity: 1;
+  padding: 10px;
+  visibility: visible;
+  border-radius: 5px;
+}
+
+.comment-field { 
+  margin-bottom: 10px;
+}
+
+.text-label {
+  display: block;
 }
 
 .comment-text {
   resize: none;
-  width: 100%;
-  height: 150px;
+  width: 80%;
+  height: 130px;
   padding: 10px;
+}
+
+.submit-warn {
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .comment-btn {
@@ -115,8 +167,8 @@ margin-bottom: 30px;
   min-width: 150px;
   font-size: 18px;
   border-radius:100px;
-  margin: 3vh 0;
   border: none;
+  margin-top: 15px;
 }
 
 .comment-warn {
@@ -136,15 +188,30 @@ width: 100%;
 }
 
 .comment-area {
-  height: 300px;
+  background-color: #f9f9fa;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
   overflow-y: scroll;
 }
 
 .comment {
-  margin-bottom: 20px;
+  background-color: #fff;
+  width: 100%;
+  margin: 10px auto;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.contributor {
+.comment > span {
   color: gray;
-  font-size: 10px;
+}
+
+.comment > p {
+  font-size: 15px;
+  margin: 5px 0;
 }

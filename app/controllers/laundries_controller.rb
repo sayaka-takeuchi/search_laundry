@@ -27,6 +27,7 @@ class LaundriesController < ApplicationController
   def show
     @comments = @laundry.comments.includes(:user)
     @comment = Comment.new
+    @comment_count = @comments.count
     gon.latitude = @laundry.latitude
     gon.longitude = @laundry.longitude
   end
