@@ -17,18 +17,19 @@
 - ruby 2.6.5
 - Ruby on Rails 6.0.3.
 - MySQL
-- AWS(EC2)
-- AWS(S3)
+- AWS(EC2、S3)
 - GoogleMapAPI
     - Maps JavaScript API
     - Geocoding API
     
 ## URL 
-- - URL http://18.181.25.177/
+- http://18.181.25.177/
 ## アカウント情報
-- Basic認証　ID arscute / Pass 0915
-- テストログイン(管理者) email test@com
+- Basic認証 ID arscute / Pass 0915
+- テストログイン(管理者) email: test@com
 - Password: aaaa1111
+- テストログイン(ユーザー) email: sample@com
+- Password: bbbb2222
 
 ## ER図
 ![search_laundry-ER図](https://user-images.githubusercontent.com/70420209/96695848-1662f080-13c5-11eb-8aa6-c7078f0c39f9.jpg)
