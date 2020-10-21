@@ -24,7 +24,7 @@
     - Geocoding API
     
 ## URL 
-- - URL http://54.95.238.12/
+- - URL http://18.181.25.177/
 ## アカウント情報
 - Basic認証　ID arscute / Pass 0915
 - テストログイン(管理者) email test@com
