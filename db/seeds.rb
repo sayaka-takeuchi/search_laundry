@@ -15,7 +15,7 @@ CSV.foreach('db/store.csv', headers: true) do |row|
   laundry.image.attach(io: File.open('public/images/image.jpg'), filename: 'image.jpg')
   laundry.save
 end
-user = User.new(
+User.create(
   nickname: 'admin', 
   first_name: '鈴木', 
   last_name: '太郎', 
@@ -25,4 +25,13 @@ user = User.new(
   password: 'aaaa1111',
   admin: true
 )
-user.save!
+User.create(
+  nickname: 'user', 
+  first_name: '佐藤', 
+  last_name: '次郎', 
+  first_name_kana: 'サトウ',
+  last_name_kana: 'ジロウ', 
+  email: 'sample@com',
+  password: 'bbbb2222',
+  admin: false
+)
