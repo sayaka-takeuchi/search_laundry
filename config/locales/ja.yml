@@ -16,6 +16,9 @@ ja:
         close_time: 営業時間(閉店時間)
       comment:
         text: コメント
+        gender: 性別
+        age_id: 年齢
+        rate_id: 評価
   time:
     formats:
       default: '%Y/%m/%d %-H:%M'
