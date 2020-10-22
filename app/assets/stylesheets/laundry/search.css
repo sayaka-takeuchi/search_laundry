@@ -1,9 +1,15 @@
 .back-top {
   display: inline-block;
-  height: 50px;
   font-size: 20px;
-  text-decoration: none;
   margin: 20px;
-  padding: 10px;;
+  padding: 10px;
   color: #000;
+  transition: .3s;
+  transform: scale(1);
+}
+
+.back-top:hover {
+  color: #000;
+  text-decoration: none;
+  transform: scale(1.2);
 }

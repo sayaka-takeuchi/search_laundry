@@ -132,7 +132,7 @@ margin-bottom: 30px;
 }
 /* 口コミ投稿欄（アコーディオン後） */
 .acd-check:checked + .acd-label + .form{
-  height: 400px;
+  height: 450px;
   opacity: 1;
   padding: 10px;
   visibility: visible;
