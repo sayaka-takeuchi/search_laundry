@@ -1,8 +1,4 @@
-.main,
-.store-show,
-.new-store-contents,
-.new-store-contents, 
-.form-wrap {
+body { 
   background-color: #f9f9fa;
 }
 
@@ -15,6 +11,7 @@
   color: #ff0000;
 }
 
+/* 検索フォーム */
 .search-area {
   padding-top: 10px;
 }
@@ -37,12 +34,13 @@
 .text-input {
   font-size: 18px;
   margin-bottom: 10px;
+  border: 1px solid #ddd;
 }
 
 .submit-btn {
   width:70px;
   height:30px; 
-  border-radius:3px;
+  border-radius:40px;
   border:none;
   color:#fff;
   background-color:#7fbfff;
@@ -54,26 +52,35 @@
 color:#666;
 }
 
+/* 店舗一覧 */
 .store-contents {
   height: calc(100vh - 150px);
   overflow-x: scroll;
 }
 
 .store-contents-info {
-  margin: 20px 50px ;
+  margin: 30px auto 0;
+  padding: 0 10px;
   border-bottom: 1px solid gray;
   display: flex;
   justify-content: space-between;
+  width: 80%;
 }
 
-.store-contents-title, .send-new-page {
-  font-size: 20px;
+.store-contents-title,
+.send-new-page {
+  font-size: 25px;
 }
 
 .send-new-page {
   text-decoration: none;
-  color: #000;
+  color: #666;
   margin-left: 10px;
+}
+
+.send-new-page:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 .store-lists {
@@ -83,61 +90,32 @@ color:#666;
   justify-content: center;
 }
 
-.list {
-  width: 30%;
-  height: 200px;
-  margin: 8px;
-  border: 1px solid gray;
-  background-color: #fff;
-  border-radius: 3px;
-}
-
-.store-info {
-  width: 100%;
-  height: 150px;
-  padding: 1vw;
-  font-size: 15px;
-  text-align: center;
-}
-
-.btn {
-  padding: 20px 0;
+.card {
+  margin: 20px;
 }
 
 .show-btn {
   text-decoration: none;
   font-size: 16px;
   text-align: center;
-  padding: 8px 30px;
+  padding: 8px 40px;
   display: inline-block;
-  border-radius: 5%;
-  color: #fff;
-  background-color: #f68b1f;
-  border-bottom: 5px solid #d56f09;
+  border-radius:40px;
+  border: 2px solid green;
+  color:green;
   margin-bottom: 5px;
 }
 
 .show-btn:hover {
-  margin-top: 3px;
-  color: #000;
-  background: #fd9535;
-  border-bottom: 2px solid  #d56f09;
-}
-
-.hidden-btn a {
-  text-decoration: none;
-  color: #000;
-  padding: 5px;
-}
-
-.hidden-btn a:hover {
-  background-color: #7fbfff;
   color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background-color: green;
 }
 
-.store-info p {
-  font-weight: bold;
-  font-size: 14px;
+.hidden-btn {
+  margin-top: 15px;
 }
 
 * {

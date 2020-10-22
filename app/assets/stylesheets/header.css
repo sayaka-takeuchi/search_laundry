@@ -10,18 +10,45 @@ header {
   background-size: cover;
 }
 
-header a, .user_name, .header-list {
-color: #000;
- text-decoration: none;
- margin: 0 10px;
+.header_title {
+  font-size: 30px;
+  color: #000;
+  font-family: sans-serif;
 }
 
-.header_title {
-  font-size: 25px;
+.header_title:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 .header-list {
 padding: 15px;
 display: flex;
-font-size: 20px;
 }
+
+.user-name {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.header-list > a {
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 5px 10px;
+}
+
+.header-list > a::after {
+  border-bottom: solid 3px #000;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .3s ease;
+  width: 0;
+}
+
+.header-list > a:hover::after {
+  width: 100%;
+}
+
