@@ -92,6 +92,12 @@ color:#666;
 
 .card {
   margin: 20px;
+  transform: scale(1.0);
+  transition: all .3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .show-btn {

@@ -33,10 +33,15 @@ display: flex;
 
 .header-list > a {
   font-size: 20px;
-  color: #000;
+  color: gray;
   text-decoration: none;
   margin-left: 20px;
   padding: 5px 10px;
+  transition: all .3s ease;
+}
+
+.header-list > a:hover {
+  color: #000;
 }
 
 .header-list > a::after {
