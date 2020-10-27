@@ -82,3 +82,7 @@
 .error_message, .login-flash-message {
   color: red;
 }
+
+.login-info { 
+  display: none;
+}
