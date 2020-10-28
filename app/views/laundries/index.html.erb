@@ -35,5 +35,6 @@
         <%= render partial: 'laundry', locals: { laundry: laundry}%>
       <% end %> 
     </ul>
+    <%= paginate @laundries %>
   </div>
 </div>

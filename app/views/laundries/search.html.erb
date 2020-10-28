@@ -10,6 +10,7 @@ app/assets/stylesheets/laundry/index.css %>
         <%= render partial: 'laundry', locals: { laundry: laundry}%>
       <% end %> 
     </ul>
+    <%= paginate @results %>
   <% else %>
       <p class="search-result">該当店舗はありませんでした</p>
   <% end %>
