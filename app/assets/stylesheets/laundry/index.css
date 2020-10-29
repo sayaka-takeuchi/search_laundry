@@ -53,11 +53,6 @@ color:#666;
 }
 
 /* 店舗一覧 */
-.store-contents {
-  /* height: calc(100vh - 150px);
-  overflow-x: scroll; */
-}
-
 .store-contents-info {
   margin: 30px auto 0;
   padding: 0 10px;
