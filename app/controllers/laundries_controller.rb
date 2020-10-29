@@ -4,7 +4,7 @@ class LaundriesController < ApplicationController
   before_action :check_user, except: [:index, :show, :search]
 
   def index
-    @laundries = Laundry.order('opening_date DESC').page(params[:page])
+    @laundries = Laundry.order('opening_date DESC').with_attached_image.page(params[:page])
   end
 
   def new
@@ -21,7 +21,7 @@ class LaundriesController < ApplicationController
   end
 
   def search
-    @results = @laundry.result.page(params[:page])
+    @results = @laundry.result.order('opening_date DESC').with_attached_image.page(params[:page])
   end
 
   def show
