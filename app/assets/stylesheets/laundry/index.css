@@ -53,11 +53,6 @@ color:#666;
 }
 
 /* 店舗一覧 */
-.store-contents {
-  height: calc(100vh - 150px);
-  overflow-x: scroll;
-}
-
 .store-contents-info {
   margin: 30px auto 0;
   padding: 0 10px;
@@ -122,6 +117,21 @@ color:#666;
 
 .hidden-btn {
   margin-top: 15px;
+}
+
+/* ページネーション表示部分 */
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination>li>a {
+  color: #696969;
+}
+
+.pagination>li>a:hover {
+  color: #177bfb;
+  transition: all .3s ease;
 }
 
 * {

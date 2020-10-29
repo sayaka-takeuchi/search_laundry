@@ -23,3 +23,11 @@ ja:
     formats:
       default: '%Y/%m/%d %-H:%M'
       short: '%-H:%M'
+      views:
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "..."
