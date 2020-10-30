@@ -1,0 +1,6 @@
+.error_message,
+.login-flash-message,
+.error-message {
+  font-size: 15px;
+  color: #b63000;
+}

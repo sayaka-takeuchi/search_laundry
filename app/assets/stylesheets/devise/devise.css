@@ -78,11 +78,6 @@
   padding: 18px 0;
 }
 
-/* エラー時のメッセージ */
-.error_message, .login-flash-message {
-  color: red;
-}
-
 .login-info { 
   display: none;
 }
