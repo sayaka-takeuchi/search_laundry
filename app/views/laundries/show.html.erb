@@ -74,7 +74,7 @@
         <input id="acd-check" class="acd-check" type="checkbox">
         <label class="acd-label" for="acd-check">口コミを投稿する</label>
         <div class="form">
-          <%= form_with(model: [@laundry, @comment]) do |f| %>
+          <%= form_with model: [@laundry, @comment], id:'js-form' do |f| %>
             <div class="comment-field">
               <%= f.label :gender, "性別(必須)" %>：
               <%= f.radio_button :gender, "1" %>男性 

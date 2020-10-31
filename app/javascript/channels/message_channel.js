@@ -10,24 +10,22 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const tweetTime = moment(data.text.created_at).format('YYYY/MM/DD H:mm');
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const date = now.getDate();
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const sendTime = `${year}/${month + 1}/${date} ${hour}:${min}`
     const comment = data.text.text.replace(/\r?\n/g, '<br>');
+    const form = document.getElementById('js-form');
+    const messages = document.getElementById('comment-area');
     const html =  `<div class="comment">
-                    <span> 投稿者:${data.name} ${tweetTime} </span>
+                    <span> 投稿者:${data.name} ${sendTime} </span>
                     <p>評価｜${data.rate}</p>
                     <p>${comment}</p>
                   </div>`;
-    const messages = document.getElementById('comment-area');
-    const newMessage = document.getElementById('comment_text');
-    const age = document.getElementById('comment_age_id');
-    const gender = document.getElementsByName('comment[gender]');
-    const rate = document.getElementById('comment_rate_id');
     messages.insertAdjacentHTML('afterbegin', html);
-    newMessage.value = '';
-    age.selectedIndex = 0;
-    rate.selectedIndex  = 0;
-    gender.forEach(function(gender) {
-      gender.checked = false;
-    });
+    form.reset();
   }
 });
