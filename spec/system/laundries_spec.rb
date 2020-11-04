@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "店舗情報登録", type: :system do
+RSpec.describe '店舗情報登録', type: :system do
   context '管理者の場合' do
     before do
       @admin = FactoryBot.create(:user, admin: true)
@@ -18,7 +18,7 @@ RSpec.describe "店舗情報登録", type: :system do
       expect{click_button '登録'}.to change { Laundry.count}.by(1)
       expect(current_path).to eq root_path
       # トップページに登録情報が表示されているか確認
-      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_selector('img[src$='test_image.png']')
       expect(page).to have_content('コインランドリー南店')
       expect(page).to have_content('愛知県名古屋市南1-1')
       expect(page).to have_content('2020/10/06')
@@ -46,7 +46,7 @@ RSpec.describe "店舗情報登録", type: :system do
   end
 end
 
-RSpec.describe "店舗情報編集", type: :system do
+RSpec.describe '店舗情報編集', type: :system do
   before do
     @admin = FactoryBot.create(:user, admin: true)
     @user = FactoryBot.create(:user, admin: false)
@@ -98,7 +98,7 @@ RSpec.describe "店舗情報編集", type: :system do
       click_button '登録'
       expect(current_path).to eq  laundry_path(@laundry)
       # 詳細ページの内容が変更されているか確認
-      expect(page).to have_selector("img[src$='test_image2.png']")
+      expect(page).to have_selector('img[src$='test_image2.png']')
       expect(page).to have_content('コインランドリー２号店') 
       expect(page).to have_content('愛知県名古屋市1-20') 
       expect(page).to have_content('2020/10/06') 
@@ -124,7 +124,7 @@ RSpec.describe "店舗情報編集", type: :system do
   end
 end
 
-RSpec.describe "店舗情報削除", type: :system do
+RSpec.describe '店舗情報削除', type: :system do
   before do
     @admin = FactoryBot.create(:user, admin: true)
     @user = FactoryBot.create(:user, admin: false)
@@ -143,8 +143,8 @@ RSpec.describe "店舗情報削除", type: :system do
       expect(page).to have_content('2020/10/31')
       click_link '削除'
       expect {
-        page.accept_confirm "削除を実行します。よろしければOKをクリックしてください。"
-        expect(page).to have_content "削除が完了しました"
+        page.accept_confirm '削除を実行します。よろしければOKをクリックしてください。'
+        expect(page).to have_content '削除が完了しました'
       }.to change { Laundry.count }.by(-1)
       expect(page).to have_no_content('コインランドリー１号店')
       expect(page).to have_no_content('愛知県名古屋市1-10')
@@ -154,7 +154,7 @@ RSpec.describe "店舗情報削除", type: :system do
       sign_in(@admin)
       click_link '削除'
       expect {
-        page.dismiss_confirm "削除を実行します。よろしければOKをクリックしてください。"
+        page.dismiss_confirm '削除を実行します。よろしければOKをクリックしてください。'
         }.to_not change { Laundry.count }
       expect(page).to have_content('コインランドリー１号店')
       expect(page).to have_content('愛知県名古屋市1-10')
@@ -175,7 +175,7 @@ RSpec.describe "店舗情報削除", type: :system do
   end
 end
 
-RSpec.describe "店舗情報詳細", type: :system do
+RSpec.describe '店舗情報詳細', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @laundry = FactoryBot.create(
@@ -196,8 +196,8 @@ RSpec.describe "店舗情報詳細", type: :system do
       sign_in(@user)
       expect(page).to have_link('詳細')
       visit laundry_path(@laundry)
-      #詳細ページに店舗情報の内容が含まれている
-      expect(page).to have_selector("img[src$='test_image.png']")
+      # 詳細ページに店舗情報の内容が含まれている
+      expect(page).to have_selector('img[src$='test_image.png']')
       expect(page).to have_content('コインランドリー１号店') 
       expect(page).to have_content('愛知県名古屋市1-10') 
       expect(page).to have_content('2020/10/31') 

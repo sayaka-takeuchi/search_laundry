@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ユーザー新規登録", type: :system do
+RSpec.describe 'ユーザー新規登録', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
@@ -11,16 +11,16 @@ RSpec.describe "ユーザー新規登録", type: :system do
       visit root_path
       expect(page).to have_content('新規登録')
       visit new_user_registration_path
-      #ユーザー情報を入力する
+      # ユーザー情報を入力する
       fill_in 'ニックネーム', with: @user.nickname
       fill_in 'メールアドレス', with: @user.email
       fill_in 'パスワード(半角英数字混合６文字以上)', with: @user.password
       fill_in 'パスワード（確認用）', with: @user.password_confirmation
       fill_in 'user_first_name', with: @user.first_name
       fill_in 'user_last_name', with: @user.last_name
-      fill_in 'user_first_name_kana',with: @user.first_name_kana
-      fill_in 'user_last_name_kana',with: @user.last_name_kana
-      #登録を行う
+      fill_in 'user_first_name_kana', with: @user.first_name_kana
+      fill_in 'user_last_name_kana', with: @user.last_name_kana
+      # 登録を行う
       expect{click_button '登録する'}.to change { User.count }.by(1)
       expect(current_path).to eq root_path
       expect(page).to have_content('アカウント登録が完了しました。')
@@ -39,15 +39,15 @@ RSpec.describe "ユーザー新規登録", type: :system do
       fill_in 'パスワード（確認用）', with: ''
       fill_in 'user_first_name', with: ''
       fill_in 'user_last_name', with: ''
-      fill_in 'user_first_name_kana',with: ''
-      fill_in 'user_last_name_kana',with: ''
+      fill_in 'user_first_name_kana', with: ''
+      fill_in 'user_last_name_kana', with: ''
       expect{click_button '登録する'}.to_not change { User.count }
       expect(current_path).to eq '/users'
     end
   end
 end
 
-RSpec.describe "ログイン", type: :system do
+RSpec.describe 'ログイン', type: :system do
   before do
     @user = FactoryBot.create(:user)
   end

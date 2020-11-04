@@ -11,7 +11,7 @@ class Laundry < ApplicationRecord
     validates :open_time
     validates :close_time
   end
-  with_options inclusion: {in: [true, false]} do
+  with_options inclusion: { in: [true, false] } do
     validates :shoe_washing
     validates :futon_washing
     validates :dryer
@@ -19,10 +19,10 @@ class Laundry < ApplicationRecord
   end
 
   def previous
-    Laundry.where('opening_date<?',self.opening_date).order('opening_date DESC').first
+    Laundry.where('opening_date<?', self.opening_date).order('opening_date DESC').first
   end
 
   def next
-    Laundry.where('opening_date>?',self.opening_date).order('opening_date ASC').first
+    Laundry.where('opening_date>?', self.opening_date).order('opening_date ASC').first
   end
 end

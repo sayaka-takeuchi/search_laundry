@@ -34,9 +34,9 @@ class LaundriesController < ApplicationController
   def destroy
     laundry = Laundry.find(params[:id])
     if laundry.destroy
-      redirect_to root_path, notice: "削除が完了しました"
+      redirect_to root_path, notice: '削除が完了しました'
     else
-      redirect_to root_path, alert: "削除が失敗しました"
+      redirect_to root_path, alert: '削除が失敗しました'
     end
   end
 
@@ -46,7 +46,7 @@ class LaundriesController < ApplicationController
   def update
     if @laundry.update(laundry_params)
       redirect_to action: :show
-    else 
+    else
       render :edit
     end
   end

@@ -8,12 +8,12 @@ RSpec.describe Laundry, type: :model do
   describe '店舗新規登録' do
     context '店舗情報が保存できる場合' do
       it '画像、店名、住所、オープン日、営業時間が入力されていれば保存ができること' do
-       expect(@laundry).to be_valid
+        expect(@laundry).to be_valid
       end
 
       it '店舗の特徴(靴選択乾燥機)を選択していなくても登録ができること' do
-       @laundry.shoe_washing = false
-       expect(@laundry).to be_valid
+        @laundry.shoe_washing = false
+        expect(@laundry).to be_valid
       end
  
       it '店舗の特徴(布団選択乾燥機)を選択していなくても登録ができること' do
@@ -25,11 +25,11 @@ RSpec.describe Laundry, type: :model do
         @laundry.dryer = false
         expect(@laundry).to be_valid
       end
- 
+
       it '店舗の特徴(洗濯機)を選択していなくても登録ができること' do
         @laundry.washing_machine = false
-        expect(@laundry).to be_valid 
-      end 
+        expect(@laundry).to be_valid
+      end
     end
 
     context '店舗情報の保存ができない場合' do
