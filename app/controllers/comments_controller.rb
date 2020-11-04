@@ -6,6 +6,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      redirect_to laundry_path(comment.laundry_id)
+    end
+  end
+
   private
   
   def comment_params
