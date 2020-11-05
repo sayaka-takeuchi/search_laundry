@@ -6,6 +6,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    laundry = Laundry.find(params[:laundry_id])
+    @comments = laundry.comments.includes(:user)
+  end
+
   private
   
   def comment_params
