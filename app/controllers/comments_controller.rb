@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
-    if comment.destroy
-      redirect_to laundry_path(comment.laundry_id)
-    end
+    comment.destroy
+    laundry = Laundry.find(params[:laundry_id])
+    @comments = laundry.comments.includes(:user)
   end
 
   private

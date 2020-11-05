@@ -108,19 +108,7 @@
     <div class="comments">
       <h2 class="comment-title">口コミ一覧</h2>
       <div class="comment-area" id="comment-area">
-        <% if @comments %>
-          <% @comments.reverse.each do |comment| %>
-            <div class="comment">
-              <%=link_to image_tag('delete.png', class: 'delete-btn'), laundry_comment_path(comment.laundry.id, comment.id), method: :delete %>
-              <span>
-                投稿者:<%= "#{comment.user.nickname}"%>
-                <%= "#{l comment.created_at}"%>
-              </span>
-              <p>評価｜<%= comment.rate.name %></p>
-              <%= simple_format(comment.text) %>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render partial: "comments/index", locals: { comments: @comments} %>
       </div>
     </div>
   </div>

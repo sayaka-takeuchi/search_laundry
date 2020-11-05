@@ -1,0 +1,15 @@
+<% if comments %>
+  <% comments.reverse.each do |comment| %>
+    <div class="comment">
+      <% if user_signed_in? && current_user.id == comment.user_id %>
+        <%=link_to image_tag("delete.png", class: "delete-btn"), laundry_comment_path(comment.laundry_id, comment.id), method: :delete, remote: true, data: { confirm: '削除しますか？'} %>
+      <% end %>
+      <span>
+        投稿者:<%= "#{comment.user.nickname}"%>
+        <%= "#{l comment.created_at}"%>
+      </span>
+      <p>評価｜<%= comment.rate.name %></p>
+      <%= simple_format(comment.text) %>
+    </div>
+  <% end %>
+<% end %>
