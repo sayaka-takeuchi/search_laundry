@@ -79,20 +79,17 @@ color:#666;
 }
 
 .store-lists {
-  width: 100%;
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .card {
-  margin: 20px;
   transform: scale(1.0);
   transition: all .3s ease;
-}
-
-.card:hover {
-  transform: scale(1.1);
+  margin: 20px 5px;
 }
 
 .show-btn {

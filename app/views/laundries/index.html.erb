@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="store-contents-info">
-    <h1 class="store-contents-title">店舗一覧<h1>
+    <h1 class="store-contents-title">店舗一覧 (<%= @laundries_count %>件)<h1>
     <% if user_signed_in? && current_user.admin? %>
       <%= link_to '登録' ,new_laundry_path, class:'send-new-page' %>
     <% end %>
