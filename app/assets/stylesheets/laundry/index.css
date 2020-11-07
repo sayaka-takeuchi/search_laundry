@@ -118,28 +118,29 @@ color:#666;
   text-align: center;
 }
 
-/* .show-btn {
-  text-decoration: none;
-  font-size: 16px;
-  text-align: center;
-  padding: 8px 40px;
-  display: inline-block;
-  border-radius:40px;
-  border: 2px solid green;
-  color:green;
-  margin-bottom: 5px;
-} */
+.average-score {
+  display: flex;
+  justify-content: center;
+}
 
-/* .show-btn:hover {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  background-color: green;
-} */
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 17px;
 
-.hidden-btn {
-  margin-top: 15px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffcc33;
+  height: 25px;
+}
+.star-rating-back {
+  color: #ccc;
 }
 
 /* ページネーション表示部分 */

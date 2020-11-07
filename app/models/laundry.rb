@@ -25,4 +25,20 @@ class Laundry < ApplicationRecord
   def next
     Laundry.where('opening_date>?', self.opening_date).order('opening_date ASC').first
   end
+
+  def avg_score
+    unless self.comments.empty?
+      comments.average(:rate_id).round(1)
+    else
+      0.0
+    end
+  end
+  
+  def avg_score_percentage
+    unless self.comments.empty?
+      comments.average(:rate_id).round(1).to_f*100/5
+    else
+      0.0
+    end
+  end
 end
