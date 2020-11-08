@@ -171,6 +171,11 @@ color:#666;
   color: #ccc;
 }
 
+.btn {
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* ページネーション表示部分 */
 .pagination {
   justify-content: center;
