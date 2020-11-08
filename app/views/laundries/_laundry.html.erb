@@ -4,10 +4,32 @@
       <%= image_tag laundry.image, class: 'card-img-top',  width:"100%", height:"180" %>
       <%= link_to '詳細を見る', laundry_path(laundry.id), class: 'mask' %>
     </div>
-    <div class="card-body text-center">
-      <p class="card-text mb-3"><%= laundry.name %></p>
-      <p class="card-text"><%= laundry.address %></p>
-      <p class="card-text mb-3"><%= l laundry.opening_date %>オープン</p>
+    <div class="card-body">
+      <p class="card-text mb-2">
+        <span><%= image_tag 'shop_name.png',class: "info-icon mr-2" %></span>
+        <%= laundry.name %></p>
+      <p class="card-text mb-2">
+        <span><%= image_tag 'address.png',class: "info-icon mr-2" %></span>
+        <%= laundry.address %>
+      </p>
+      <p class="card-text mb-3">
+        <span><%= image_tag 'open-day.png',class: "info-icon mr-2" %></span>
+        <%= l laundry.opening_date %>
+      </p>
+      <div class="tags text-center mb-3">
+        <% if laundry.shoe_washing %>
+          <span class="tag">#靴が洗える</span>
+        <% end %> 
+        <% if laundry.futon_washing %>
+          <span class="tag">#敷布団が洗える</span>
+        <% end %>   
+        <% if laundry.dryer %>
+          <span class="tag">#乾燥機有</span>
+        <% end %> 
+        <% if laundry.washing_machine %>
+          <span class="tag">#洗濯機有</span>
+        <% end %> 
+      </div>
       <div class="average-score mb-3">
         <div class="comment-count">
           <%= image_tag 'comment.png', class: 'comment-icon', width:"15", height:"15"%>
