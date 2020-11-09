@@ -3,15 +3,13 @@
   font-size: 20px;
   margin: 20px;
   padding: 10px;
-  color: #000;
+  color: gray;
   transition: .3s;
-  transform: scale(1);
 }
 
 .back-top:hover {
   color: #000;
   text-decoration: none;
-  transform: scale(1.2);
 }
 
 .search-result {
