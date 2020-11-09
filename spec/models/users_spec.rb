@@ -74,52 +74,52 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
     end
 
-    it '苗字(fitst_name)が空の場合登録できないこと' do
-      @user.first_name = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include('苗字を入力してください')
-    end
+    # it '苗字(fitst_name)が空の場合登録できないこと' do
+    #   @user.first_name = nil
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('苗字を入力してください')
+    # end
 
-    it '苗字(fitst_name)が全角日本語ではない場合登録できないこと' do
-      @user.first_name = 'ｽｽﾞｷ'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('苗字には全角日本語を使用してください')
-    end
+    # it '苗字(fitst_name)が全角日本語ではない場合登録できないこと' do
+    #   @user.first_name = 'ｽｽﾞｷ'
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('苗字には全角日本語を使用してください')
+    # end
 
-    it '名前(last_name)が空の場合登録できないこと' do
-      @user.last_name = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include('名前を入力してください')
-    end
+    # it '名前(last_name)が空の場合登録できないこと' do
+    #   @user.last_name = nil
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('名前を入力してください')
+    # end
 
-    it '名前(last_name)が全角日本語ではない場合登録できないこと' do
-      @user.last_name = 'ﾀﾛｳ'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('名前には全角日本語を使用してください')
-    end
+    # it '名前(last_name)が全角日本語ではない場合登録できないこと' do
+    #   @user.last_name = 'ﾀﾛｳ'
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('名前には全角日本語を使用してください')
+    # end
 
-    it '苗字カナ(fitst_name_kana)が空の場合登録できないこと' do
-      @user.first_name_kana = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include('苗字(カナ)を入力してください')
-    end
+    # it '苗字カナ(fitst_name_kana)が空の場合登録できないこと' do
+    #   @user.first_name_kana = nil
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('苗字(カナ)を入力してください')
+    # end
 
-    it '苗字カナ(fitst_name_kana)が全角カタカナではない場合登録できないこと' do
-      @user.first_name_kana = 'suzuki'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('苗字(カナ)には全角カタカナを使用してください')
-    end
+    # it '苗字カナ(fitst_name_kana)が全角カタカナではない場合登録できないこと' do
+    #   @user.first_name_kana = 'suzuki'
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('苗字(カナ)には全角カタカナを使用してください')
+    # end
 
-    it '名前カナ(last_name_kana)が空の場合登録できないこと' do
-      @user.last_name_kana = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include('名前(カナ)を入力してください')
-    end
+    # it '名前カナ(last_name_kana)が空の場合登録できないこと' do
+    #   @user.last_name_kana = nil
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('名前(カナ)を入力してください')
+    # end
 
-    it '名前カナ(last_name_kana)が全角カタカナではない場合登録できないこと' do
-      @user.last_name_kana = 'tarou'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('名前(カナ)には全角カタカナを使用してください')
-    end
+    # it '名前カナ(last_name_kana)が全角カタカナではない場合登録できないこと' do
+    #   @user.last_name_kana = 'tarou'
+    #   @user.valid?
+    #   expect(@user.errors.full_messages).to include('名前(カナ)には全角カタカナを使用してください')
+    # end
   end
 end
