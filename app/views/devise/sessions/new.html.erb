@@ -26,10 +26,15 @@
 
     <%= f.submit "ログインする", class: 'actions' %>
   <% end %>
-  <div class="a">
-  <p>↓新規登録をしていない方はこちら↓</P>
-  <%= link_to '新規登録', new_user_registration_path, class: 'send-sign-up' %>
+  <div class="test-login mb-4">
+    <p>ゲストログイン</p>
+    <%= link_to '閲覧用', users_guest_sign_in_path, method: :post, class: "test-user" %> |
+    <%= link_to '管理者用', users_admin_sign_in_path, method: :post, class: "test-admin" %>
   </div>
+  <p>新規登録をしていない方は
+    <%= link_to 'こちら', new_user_registration_path, class: "send-sign-up" %>
+    へ
+  </P>
 </div>
 <%= javascript_pack_tag 'login' %>
 

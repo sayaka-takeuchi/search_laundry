@@ -1,6 +1,5 @@
 /* 登録画面 */
 .form-wrap {
-  width: 100%;
   padding-bottom: 70px;
   margin: 0 auto;
   text-align: center;
@@ -55,7 +54,7 @@
   margin-bottom: 15px;
 }
 
-.actions, .send-sign-up  {
+.actions {
   height: 70px;
   width: 170px;
   color: #fff;
@@ -66,18 +65,23 @@
 }
 
 .actions {
-  background-color: 	#E95B6B;
-}
-
-/* 新規登録ページ遷移ボタン(その他は登録画面と共有） */
-.send-sign-up {
-  display: block;
-  margin: 5px auto 0;
-  background-color: #3333FF;
-  text-decoration: none;
-  padding: 18px 0;
+  background-color: #E95B6B;
 }
 
 .login-info { 
   display: none;
+}
+
+.send-sign-up,
+.test-user, 
+.test-admin {
+  border-bottom: 1px solid #b63000;
+  transition: .3s;
+}
+
+.send-sign-up:hover,
+.test-user:hover, 
+.test-admin:hover {
+  text-decoration: none;
+  color: #b63000;
 }

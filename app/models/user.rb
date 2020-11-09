@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :admin, inclusion: { in: [true, false] }
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'には半角英字と半角数字の両方を含めて設定してください'
+  validates_format_of :password, with: PASSWORD_REGEX, on: :create, message: 'には半角英字と半角数字の両方を含めて設定してください'
 
   NAME_REGEX = /\A[あ-んァ-ン一-龥]+\z/.freeze
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
