@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       @user = FactoryBot.build(:user)
     end
 
-    it '全ての値が正しく入力されている場合保存ができること' do 
+    it '全ての値が正しく入力されている場合保存ができること' do
       expect(@user).to be_valid
     end
 
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
       another_user.valid?
       expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
     end
-    
+
     it 'パスワードが空の場合登録ができないこと' do
       @user.password = nil
       @user.valid?
@@ -66,7 +66,6 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = ''
       @user.valid?
       expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
-
     end
     it 'パスワード（確認用）とパスワードが異なる場合登録ができないこと' do
       @user.password = 'aaa111'

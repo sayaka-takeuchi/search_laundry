@@ -49,11 +49,11 @@ RSpec.describe 'Comments', type: :system do
         visit laundry_path(@laundry)
         # 削除アイコンの表示を確認
         expect(find('.comment')).to have_selector('img')
-        find(".delete-btn").click
-        expect {
+        find('.delete-btn').click
+        expect do
           page.accept_confirm '削除しますか？'
           sleep 1
-        }.to change { Comment.count }.by(-1)
+        end.to change { Comment.count }.by(-1)
       end
     end
 

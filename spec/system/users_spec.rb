@@ -21,7 +21,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'user_first_name_kana', with: @user.first_name_kana
       fill_in 'user_last_name_kana', with: @user.last_name_kana
       # 登録を行う
-      expect{click_button '登録する'}.to change { User.count }.by(1)
+      expect {click_button '登録する'}.to change { User.count }.by(1)
       expect(current_path).to eq root_path
       expect(page).to have_content('アカウント登録が完了しました。')
       expect(page).to have_no_content('ログイン')
@@ -41,7 +41,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'user_last_name', with: ''
       fill_in 'user_first_name_kana', with: ''
       fill_in 'user_last_name_kana', with: ''
-      expect{click_button '登録する'}.to_not change { User.count }
+      expect {click_button '登録する'}.to_not change { User.count }
       expect(current_path).to eq '/users'
     end
   end
@@ -77,4 +77,3 @@ RSpec.describe 'ログイン', type: :system do
     end
   end
 end
-

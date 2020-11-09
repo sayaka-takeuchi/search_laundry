@@ -15,10 +15,10 @@ RSpec.describe Laundry, type: :model do
         @laundry.shoe_washing = false
         expect(@laundry).to be_valid
       end
- 
+
       it '店舗の特徴(布団選択乾燥機)を選択していなくても登録ができること' do
         @laundry.futon_washing = false
-        expect(@laundry).to be_valid 
+        expect(@laundry).to be_valid
       end
 
       it '店舗の特徴(乾燥機)を選択していなくても登録ができること' do
