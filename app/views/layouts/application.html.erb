@@ -21,6 +21,7 @@
             <li class="header-list">
               <p class="user-name"><%= current_user.nickname %></p>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <%= link_to "編集する", edit_user_registration_path %>
             </li>
           <% else %>
             <li class="header-list">
