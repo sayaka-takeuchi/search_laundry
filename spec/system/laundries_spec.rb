@@ -18,7 +18,7 @@ RSpec.describe '店舗情報登録', type: :system do
       expect{click_button '登録'}.to change { Laundry.count}.by(1)
       expect(current_path).to eq root_path
       # トップページに登録情報が表示されているか確認
-      expect(page).to have_selector('img[src$='test_image.png']')
+      expect(page).to have_selector("img[src$='test_image.png']")
       expect(page).to have_content('コインランドリー南店')
       expect(page).to have_content('愛知県名古屋市南1-1')
       expect(page).to have_content('2020/10/06')
@@ -98,7 +98,7 @@ RSpec.describe '店舗情報編集', type: :system do
       click_button '登録'
       expect(current_path).to eq  laundry_path(@laundry)
       # 詳細ページの内容が変更されているか確認
-      expect(page).to have_selector('img[src$='test_image2.png']')
+      expect(page).to have_selector("img[src$='test_image2.png']")
       expect(page).to have_content('コインランドリー２号店') 
       expect(page).to have_content('愛知県名古屋市1-20') 
       expect(page).to have_content('2020/10/06') 
@@ -194,10 +194,10 @@ RSpec.describe '店舗情報詳細', type: :system do
   context 'ログインユーザーの場合' do
     it '詳細ページにコメント投稿フォームが表示される' do
       sign_in(@user)
-      expect(page).to have_link('詳細')
+      expect(find('.image').hover).to have_link('詳細を見る')
       visit laundry_path(@laundry)
       # 詳細ページに店舗情報の内容が含まれている
-      expect(page).to have_selector('img[src$='test_image.png']')
+      expect(page).to have_selector("img[src$='test_image.png']")
       expect(page).to have_content('コインランドリー１号店') 
       expect(page).to have_content('愛知県名古屋市1-10') 
       expect(page).to have_content('2020/10/31') 
@@ -216,7 +216,7 @@ RSpec.describe '店舗情報詳細', type: :system do
   context '未ログインユーザーの場合' do
     it '詳細ページにコメント投稿フォームが表示されていない' do
       visit root_path
-      expect(page).to have_link('詳細')
+      expect(find('.image').hover).to have_link('詳細を見る')
       visit laundry_path(@laundry)
       #投稿フォームが表示されていない
       expect(page).to have_content('ログインユーザーのみ口コミ投稿ができます。')
