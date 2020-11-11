@@ -16,10 +16,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'メールアドレス', with: @user.email
       fill_in 'パスワード(半角英数字混合６文字以上)', with: @user.password
       fill_in 'パスワード（確認用）', with: @user.password_confirmation
-      # fill_in 'user_first_name', with: @user.first_name
-      # fill_in 'user_last_name', with: @user.last_name
-      # fill_in 'user_first_name_kana', with: @user.first_name_kana
-      # fill_in 'user_last_name_kana', with: @user.last_name_kana
       # 登録を行う
       expect {click_button '登録する'}.to change { User.count }.by(1)
       expect(current_path).to eq root_path
@@ -37,10 +33,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'メールアドレス', with: ''
       fill_in 'パスワード(半角英数字混合６文字以上)', with: ''
       fill_in 'パスワード（確認用）', with: ''
-      # fill_in 'user_first_name', with: ''
-      # fill_in 'user_last_name', with: ''
-      # fill_in 'user_first_name_kana', with: ''
-      # fill_in 'user_last_name_kana', with: ''
       expect {click_button '登録する'}.to_not change { User.count }
       expect(current_path).to eq '/users'
     end

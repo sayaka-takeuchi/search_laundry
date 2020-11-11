@@ -26,37 +26,6 @@
       <span class="indispensable">必須</span><br />
       <%= f.password_field :password_confirmation, class: 'info-text', placeholder: '同じパスワードを入力' %>
     </div>
-    <%# <div class="form-group">
-      <div class="form-info">
-        <h2>
-          本人確認
-        </h2>
-        <p class='form-info-text'>
-          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。<br>
-          他のお客さまに公開されることはありません。
-        </p>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">お名前(全角)</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <div class='field'>
-        <%= f.text_field :first_name, class:"input-name", placeholder:"例) 山田" %>
-        <%# <%= f.text_field :last_name, class:"input-name", placeholder:"例) 陸太郎" %>
-      <%# </div>
-    </div> %>
-    <%# <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">お名前カナ(全角)</label>
-        <span class="indispensable">必須</span>
-      </div> %>
-      <%# <div class='field'>
-        <%= f.text_field :first_name_kana, class:"input-name", placeholder:"例) ヤマダ" %>
-        <%# <%= f.text_field :last_name_kana, class:"input-name", placeholder:"例) リクタロウ" %>
-      <%# </div> %>
-    <%# </div> %>
     <%= f.submit "登録する", class: 'actions' %>
   <% end %>
 </div>
