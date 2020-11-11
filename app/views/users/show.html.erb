@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="user-info">
+    <div class="info-title mt-5">
+      <span><%= image_tag 'user-icon.png',class: "user-icon" %></span>
+      <p class="title">基本情報</p>
+    </div>
+    <div class="user-detail p-4 mb-4">
+      <div class="info-detail">
+        <span class="name">名前：</span>
+        <span class="value"><%= @user.nickname %></span>
+      </div>
+      <div class="info-detail">
+        <span class="name">アドレス：</span>
+        <span class="value"><%= @user.email %></span>
+      </div>
+      <div class="edit-link">
+        <%= link_to "編集する",  edit_user_registration_path, class: "badge badge-info p-3" %>
+      </div>
+    </div>  
+  </div>
+  <div class="user-comments">
+    <p>
+      <span><%= image_tag 'comment.png', class: 'comment-icon', width:"25", height:"25"%></span>
+      投稿コメント一覧
+    </p>
+    <% if @comments.present? %>
+      <div class="comment-area">
+        <% @comments.reverse.each do |comment| %>
+          <div class="comment">
+            <span>
+              <%= link_to comment.laundry.name, laundry_path(comment.laundry_id), class: "laundry-link" %>
+              <%= "#{l comment.created_at}"%>
+            </span>
+            <p>評価｜<%= comment.rate.name %></p>
+            <%= simple_format(comment.text) %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <span class="result">投稿コメントはありません</span>
+    <% end %>
+  </div>
+</div>
