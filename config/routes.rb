@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     post 'users/admin_sign_in', to: 'users/sessions#new_admin'
   end
   root to: 'laundries#index'
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+  end
   resources :users, only: [:show]
   resources :laundries do
     resources :comments, only: [:create, :destroy]

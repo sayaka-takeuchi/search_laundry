@@ -19,7 +19,7 @@ ja:
     formats:
       default: '%Y/%m/%d %-H:%M'
       short: '%-H:%M'
-      views:
+      date: '%Y/%m/%d'
   views:
     pagination:
       first: "&laquo; First"
