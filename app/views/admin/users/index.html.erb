@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <div class="flash-message">
+    <%= flash[:success] %>
+    <%= flash[:failure] %>
+  </div>
+  <div class="tab" id="js-tab">
+    <div class="tab-nav">
+      <a href="" class="tab-nav-item" data-nav="0">ユーザー一覧(<%= @users.count %>)</a>
+      <a href="" class="tab-nav-item" data-nav="1">店舗一覧(<%= @laundries.count %>)</a>
+      <a href="" class="tab-nav-item" data-nav="2">コメント一覧(<%= @comments.count %>)</a>
+    </div>
+    <div class="tab-contents">
+      <div class="tab-contents-item" data-content="0">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">ニックネーム</th>
+                <th scope="col">メールアドレス</th>
+                <th scope="col">登録日</th>
+                <th scope="col">削除</th>
+              </tr>
+            </thead>
+            <% @users.each do |user| %>
+              <tbody>
+                <tr>
+                  <td><%= user.nickname %></td>
+                  <td><%= user.email %></td>
+                  <td><%= l user.created_at,format: :date %></td>
+                  <td>
+                  <% unless user.admin %>
+                    <%= link_to '削除' ,admin_user_path(user.id), method: :delete, data: { confirm: '削除を実行しますか？'} %>
+                  <% end %>
+                  </td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <div class="tab-contents-item" data-content="1">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">店舗名</th>
+                <th scope="col">住所</th>
+                <th scope="col">オープン日</th>
+                <th scope="col">営業時間</th>
+              </tr>
+            </thead>
+            <% @laundries.each do |laundry| %>
+              <tbody>
+                <tr>
+                  <td><%= link_to laundry.name , laundry_path(laundry.id) %></td>
+                  <td><%= laundry.address %></td>
+                  <td><%= laundry.opening_date %></td>
+                  <td><%= l laundry.open_time, format: :short %>〜<%= l laundry.close_time, format: :short %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <div class="tab-contents-item" data-content="2">
+        <%= button_to "CSV出力", admin_users_path(format: :csv), class: 'csv-button mb-2', method: :get %>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">内容</th>
+                <th scope="col">性別</th>
+                <th scope="col">年代</th>
+                <th scope="col">評価</th>
+                <th scope="col">店舗名</th>
+              </tr>
+            </thead>
+            <% @comments.each do |comment| %>
+              <tbody>
+                <tr>
+                  <td><%= simple_format(comment.text) %></td>
+                  <td>
+                    <% case comment.gender
+                      when 1 %>男性
+                    <% when 2 %>女性
+                    <% when 3 %>無回答
+                    <% end %>
+                  </td>
+                  <td><%= comment.age.name %></td>
+                  <td><%= comment.rate.name %></td>
+                  <td><%= comment.laundry.name %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'tab' %>

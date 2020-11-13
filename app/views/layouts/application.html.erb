@@ -15,21 +15,36 @@
       <h1>
         <%= link_to 'SearchLaundry', root_path, class: 'header_title' %>
       </h1>
-      <nav class="user_nav">
-        <ul>
-          <% if user_signed_in? %>
-            <li class="header-list">
+      <ul class="nav justify-content-end">
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to '店舗登録' ,new_laundry_path, class:'nav-link' %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="dropdown" id="dropdown-toggle">
+            <a class="btn dropdown-toggle">
               <p class="user-name"><%= current_user.nickname %></p>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </li>
-          <% else %>
-            <li class="header-list">
-              <%= link_to "ログイン", new_user_session_path %>
-              <%= link_to "新規登録", new_user_registration_path %>
-            </li>
-           <% end %>
-        </ul>
-      </nav>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" id= "dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <% if current_user.admin? %>
+                <%= link_to "管理者ページ",  admin_users_path, class:"dropdown-item" %>
+              <% else %>
+                <%= link_to "マイページ",  user_path(current_user.id), class:"dropdown-item" %>
+              <% end %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %>
+            </div>
+          </div>
+        <% else %> 
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class:'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
     </header>
     <%= yield %>
     <footer>

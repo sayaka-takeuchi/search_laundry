@@ -2,9 +2,8 @@ footer {
   height: 50px;
   margin: 0 auto;
   padding: 10px;
-  background-image: url('image-dd8212ddb8c530d1a7c6a1fce4356d3b6fa4fd1c779a5b9970cb7f212e6dd99d.webp');
-  background-size: cover;
-  color:#000;
+  background-color: #FC8D99;
+  color:#fff;
 }
 
 footer p {

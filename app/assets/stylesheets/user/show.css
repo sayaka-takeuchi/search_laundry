@@ -1,0 +1,83 @@
+.wrapper {
+  min-height: calc(100vh - 150px);
+}
+.user-detail {
+  background-color: #fff;
+  width: 70%;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+.info-title {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 20px;
+  justify-content: center;
+  background-color: #ffffe0;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+.info-detail {
+  margin-bottom: 15px;
+}
+
+.user-icon {
+ width: 40px;
+ height: 40px;
+}
+
+.title,
+.user-comments > p {
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.name {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+}
+
+.edit-link {
+  text-align: right;
+}
+
+.user-comments {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.user-comments > p {
+  text-align: center;
+  background-color: #ffffe0;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+.laundry-link {
+  transition: .3s;
+  color: #808080;
+}
+
+.laundry-link:hover {
+  color: #000;
+}
+
+.user-comments { 
+ margin-bottom: 10px;
+}
+
+.result {
+  font-size: 18px;
+  background-color: #fff;
+  margin: 10px 0;
+  text-align: center;
+  border: 1px solid #ddd;
+  display: block;
+  height: 70px;
+  padding: 2%;
+}
