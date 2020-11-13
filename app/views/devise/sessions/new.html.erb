@@ -1,14 +1,5 @@
 <div class="form-wrap">
   <h2>ログイン</h2>
-  <%# ログイン情報表示 %>
-  <button type=button id="info-btn" >
-    ログイン情報(ポートフォリオ操作用)
-  </button>  
-  <div class="login-info" id="js-login-info">
-    <p>[管理者(全ての機能を利用可能)]<br>アドレス：test@com <br>パスワード：aaaa1111</p>
-    <p>[ユーザー(口コミ投稿機能可能)]<br>アドレス：sample@com <br>パスワード：bbbb2222</p>
-  </div>
-
   <%= form_with model: @user, url:user_session_path, local: true do |f| %>
   <div class="login-flash-message">
     <%= flash[:notice] %>
@@ -36,5 +27,3 @@
     へ
   </P>
 </div>
-<%= javascript_pack_tag 'login' %>
-
