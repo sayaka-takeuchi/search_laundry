@@ -5,6 +5,11 @@ class Admin::UsersController < ApplicationController
     @users = User.order('created_at DESC')
     @laundries = Laundry.order('created_at DESC')
     @comments = Comment.all
+    
+    respond_to do |format|
+      format.html
+      format.csv { send_data render_to_string, filename: "#{Time.now.to_date.to_s}.csv" }
+    end
   end
 
   def destroy

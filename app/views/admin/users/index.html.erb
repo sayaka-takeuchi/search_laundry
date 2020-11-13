@@ -63,6 +63,7 @@
         </div>
       </div>
       <div class="tab-contents-item" data-content="2">
+        <%= button_to "CSV出力", admin_users_path(format: :csv), class: 'csv-button mb-2', method: :get %>
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead class="thead-light">

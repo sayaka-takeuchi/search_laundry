@@ -21,9 +21,16 @@
   background: #333;
   color: #fff;
 }
+
 .tab-contents {
   border: 1px solid #ccc;
   padding: 20px;
+}
+
+.csv-button {
+  border: 1px solid #ccc ;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 .tab-contents-item {
