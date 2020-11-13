@@ -22,7 +22,7 @@ consumer.subscriptions.create("MessageChannel", {
     const messages = document.getElementById('comment-area');
     const html =  `<div class="comment">
                     <a data-confirm="削除しますか？" data-remote="true" rel="nofollow" data-method="delete" href="/laundries/${data.text.laundry_id}/comments/${data.text.id}">
-                      <img class="delete-btn" src="/assets/delete.png">
+                      <img class="delete-btn" src="/assets/delete-b0e544f038027f879110c01a37711b944849121f7f3c744257be0fae6bc8229e.png">
                     </a>
                     <span> 投稿者:${data.name} ${sendTime} </span>
                     <p>評価｜${data.rate}</p>
