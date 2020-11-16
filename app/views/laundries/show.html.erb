@@ -58,6 +58,16 @@
   </div>
   <%# 地図を表示 %>
   <div id='map'></div>
+  <div class="icon-info mb-3">
+    <p class="mr-3">
+      <%= image_tag 'red-icon.png', class: 'map-icon'%>
+      <%= @laundry.name %>
+    </p>
+    <p>
+      <%= image_tag 'yellow-icon.png', class: 'map-icon'%>
+      周辺店舗(半径５km以内)
+    </p>
+  </div>
   <%# 店舗詳細ページ切り替え %>
   <div class="links">
     <% if @laundry.previous.present?%>

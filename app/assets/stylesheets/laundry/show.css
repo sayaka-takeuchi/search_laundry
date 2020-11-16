@@ -58,6 +58,16 @@ width: 65%;
 margin-bottom: 30px;
 }
 
+.icon-info {
+  display: flex;
+  font-size: 20px;
+}
+
+.map-icon {
+  height: 25px;
+  width: 25px;
+}
+
 /* 店舗切り替え */
 .links {
   margin-bottom: 20px;

@@ -29,8 +29,11 @@ class LaundriesController < ApplicationController
   def show
     @comments = @laundry.comments.includes(:user)
     @comment = Comment.new
+    @places = @laundry.nearbys(5, units: :km)
+    # 以下GoogleMap表示用
     gon.latitude = @laundry.latitude
     gon.longitude = @laundry.longitude
+    gon.places = @places
   end
 
   def destroy
