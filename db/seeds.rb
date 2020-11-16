@@ -12,7 +12,7 @@ CSV.foreach('db/store.csv', headers: true) do |row|
     dryer: row['dryer'],
     washing_machine: row['washing_machine']
   )
-  laundry.image.attach(io: File.open("app/assets/images/image/image#{row['id']}.webp"), filename: 'image.jpg')
+  laundry.image.attach(io: File.open("app/assets/images/image/image#{row['id']}.jpg"), filename: 'image.jpg')
   laundry.save
 end
 User.create(
