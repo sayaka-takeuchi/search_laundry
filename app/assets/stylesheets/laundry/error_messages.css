@@ -4,3 +4,11 @@
   font-size: 15px;
   color: #b63000;
 }
+
+@media screen and (max-width: 767px) {
+  .error_message,
+  .login-flash-message,
+  .error-message {
+  font-size: 12px;
+  }
+}
