@@ -3,6 +3,8 @@
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
+
+  <%# 検索フォーム %>
   <div class="search-area">
     <div class="search-form">
       <h1>店舗検索</h1>
@@ -14,10 +16,18 @@
         <%= f.text_field :address_cont, placeholder: '例)名古屋市', class: 'text-input' %>
         <br>
         <%= f.label :status_true, '機能:' %>
+        <div class="checkbox">
           <%= f.check_box :shoe_washing_eq_any, {multiple: true}, 1, '' %> 靴を洗う
+        </div>
+        <div class="checkbox">
           <%= f.check_box :futon_washing_eq_any, {multiple: true}, 1, ''%> 敷布団を洗う
+        </div>
+        <div class="checkbox">
           <%= f.check_box :dryer_eq_any, {multiple: true}, 1, '' %> 乾燥のみ
+        </div>
+        <div class="checkbox">
           <%= f.check_box :washing_machine_eq_any, {multiple: true}, 1, '' %> 洗濯のみ
+        </div>
         <br>
         <%= f.submit '検索', class: 'submit-btn' %>
       <% end %>
