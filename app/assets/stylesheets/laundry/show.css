@@ -1,6 +1,7 @@
 /* new-store-contentsは店舗新規登録画面の要素  */
 .store-show,
 .new-store-contents {
+  min-height: calc(100vh - 110px);
   width: 100vw;
   display: flex;
   flex-direction: column;

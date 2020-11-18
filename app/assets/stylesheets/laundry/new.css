@@ -20,6 +20,7 @@ app/assets/stylesheets/laundry/show.css */
   margin: 20px 0;
 }
 
+/* 店舗名、住所入力欄 */
 .store-text {
   width: 60%;
   padding: 15px;
@@ -28,6 +29,7 @@ app/assets/stylesheets/laundry/show.css */
   font-size: 18px;
 }
 
+/* 24時間営業ボタン */
 .time-btn {
   border: 1px solid #000066;
   border-radius: 3px;
@@ -35,6 +37,7 @@ app/assets/stylesheets/laundry/show.css */
   margin: 15px auto 0;
 }
 
+/* 登録ボタン */
 .store-reg-btn {
   height: 70px;
   width: 130px;
@@ -66,4 +69,42 @@ app/assets/stylesheets/laundry/show.css */
   text-decoration: none;
   color: #fff;
   background-color: #666;
+}
+
+@media screen and (max-width: 767px) {
+  .laundry-form {
+    width: 80%;
+  }
+
+  .weight-bold-text {
+    font-size: 12px;
+    margin: 20px 0 10px;
+  }
+
+  .click-upload,
+  .store-character {
+    font-size: 12px;
+  }
+
+  .store-text {
+    width: 85%;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .store-reg-btn,
+  .back-btn {
+    display: block;
+    width: 100px;
+    font-size: 15px;
+    margin: 0 auto 10px;
+  }
+
+  .store-reg-btn {
+    height: 35px;
+  }
+
+  .back-btn {
+    padding: 8px 12px;
+  }
 }
