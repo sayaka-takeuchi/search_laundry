@@ -1,55 +1,59 @@
-header {
-  width: 100%;
-  height: 100px;
-  padding: 30px 4%;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #FC8D99;
-  position: relative;
-}
-
-.header_title {
+/* タイトル部分 */
+.navbar-dark .navbar-brand {
   font-size: 30px;
   color: #fff;
   font-family: sans-serif;
 }
 
-.header_title:hover {
-  text-decoration: none;
-  color: #fff;
+/* ハンバーガーメニューの枠線を削除 */
+.navbar-toggler {
+  border: none;
 }
 
-.nav-link {
+/* ハンバーガーメニューの色を変更 */
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+button:focus {
+  outline: none;
+}
+
+/* ヘッダー内ナビゲーションの項目 */
+.navbar-dark .navbar-nav .nav-link {
   font-size: 20px;
   color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: all .3s ease;
+  margin: 0;
+  transition: .5s;
 }
 
-.dropdown {
-  padding-bottom: 5px;
-}
-
-.user-name {
-  font-size: 20px;
-  display: inline;
-  color:#fff;
-  transition: all .3s ease;
-}
-
-.dropdown-toggle::after {
-  color: #fff;
-  transition: all .3s ease;
-}
-
-.nav-link:hover,
+/* ナビゲーション項目ホバー時 */
+.navbar-dark .navbar-nav .nav-link:hover,
 .dropdown-toggle:hover::after {
   color: #7c0008;
 }
 
-.dropdown-menu.active {
+/* ドロップダウンにスライドアニメーションを追加 */
+.show > .dropdown-menu {
+  max-height: 100px;
+  visibility: visible;
+}
+  
+.dropdown-menu {
   display: block;
+  max-height: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+ /*タブレット・スマートフォン向け記述*/
+@media screen and (max-width: 767px) {
+  .navbar-dark .navbar-brand {
+    font-size: 20px;
+  }
+ 
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 15px;
+  }
 }

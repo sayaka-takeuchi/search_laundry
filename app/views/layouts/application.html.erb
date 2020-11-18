@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SearchLaundry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
@@ -9,43 +10,53 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header class="header">
-      <h1>
-        <%= link_to 'SearchLaundry', root_path, class: 'header_title' %>
-      </h1>
-      <ul class="nav justify-content-end">
-        <% if user_signed_in? && current_user.admin? %>
-          <li class="nav-item">
-            <%= link_to '店舗登録' ,new_laundry_path, class:'nav-link' %>
-          </li>
-        <% end %>
-        <% if user_signed_in? %>
-          <div class="dropdown" id="dropdown-toggle">
-            <a class="btn dropdown-toggle">
-              <p class="user-name"><%= current_user.nickname %></p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" id= "dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <% if current_user.admin? %>
-                <%= link_to "管理者ページ",  admin_users_path, class:"dropdown-item" %>
-              <% else %>
-                <%= link_to "マイページ",  user_path(current_user.id), class:"dropdown-item" %>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#FC8D99;">
+          <a class="navbar-brand ml-3" href="/">SearchLaundry</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto px-3">
+              <% if user_signed_in? && current_user.admin? %>
+                  <li class="nav-item">
+                    <%= link_to '店舗登録' ,new_laundry_path, class:'nav-link d-flex align-items-center' %>
+                  </li>
               <% end %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %>
-            </div>
+              <% if user_signed_in? %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle  d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= current_user.nickname %>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" id= "dropdown-menu" aria-labelledby="navbarDropdown">
+                    <% if current_user.admin? %>
+                      <%= link_to "管理者ページ",  admin_users_path, class:"dropdown-item" %>
+                    <% else %>
+                      <%= link_to "マイページ",  user_path(current_user.id), class:"dropdown-item" %>
+                    <% end %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %>
+                  </div>
+                </li>
+              <% else %> 
+                <li class="nav-item">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <%= link_to "ログイン", new_user_session_path, class:'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <i class="fas fa-user-plus"></i>
+                  <%= link_to "新規登録", new_user_registration_path, class:'nav-link' %>
+                </li>
+              <% end %>
+            </ul>
           </div>
-        <% else %> 
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class:'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "新規登録", new_user_registration_path, class:'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </header>
+        </nav>
+      </header>
     <%= yield %>
     <footer>
       <p>

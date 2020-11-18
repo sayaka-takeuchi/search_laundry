@@ -1,5 +1,6 @@
 /* 登録画面 */
 .form-wrap {
+  min-height: calc(100vh - 110px);
   padding-bottom: 70px;
   margin: 0 auto;
   text-align: center;
@@ -14,14 +15,12 @@
   padding: 20px;
 }
 
-.message {
-  color: #f00;
-}
-
+/* 入力欄のラベル */
 .field {
   margin-top: 15px;
 }
 
+/* 必須ラベル */
 .indispensable {
   border: 1px solid #000;
   font-size: 12px;
@@ -33,6 +32,7 @@
   border-radius: 3px;
 }
 
+/* 登録・ログインの入力欄 */
 .info-text {
   height: 45px;
   width: 250px;
@@ -40,20 +40,7 @@
   padding-left: 10px;
 }
 
-.input-name {
-  margin-bottom: 10px;
-  height: 45px;
-  width: 150px;
-  margin-left: 20px;
-  padding-left: 10px;
-}
-
-.form-info-text {
-  font-size: 15px;
-  padding: 0 10px;
-  margin-bottom: 15px;
-}
-
+/* フォーム送信ボタン */
 .actions {
   height: 70px;
   width: 170px;
@@ -62,9 +49,6 @@
   margin: 35px 0;
   border-radius: 5px;
   font-size: 20px;
-}
-
-.actions {
   background-color: #E95B6B;
 }
 
@@ -84,4 +68,43 @@
 .test-admin:hover {
   text-decoration: none;
   color: #b63000;
+}
+
+@media screen and (max-width: 767px) {
+  .form-wrap {
+    min-height: calc(100vh - 105px);
+  }
+
+  .form-wrap h2 {
+    font-size: 15px;
+    margin: 0 auto 10px;
+    padding: 10px;
+  }
+
+  .field {
+    font-size: 12px;
+  }
+
+  .info-text {
+    font-size: 12px;
+    margin: 0;
+    height: 40px;
+    width: 200px;
+  }  
+
+  .indispensable {
+    font-size: 10px;
+    padding: 4px;
+  }
+  
+  .actions {
+    height: 50px;
+    width: 120px;
+    font-size: 15px;
+  }
+  
+  .test-login,
+  .send-registration {
+    font-size: 15px;
+  }
 }

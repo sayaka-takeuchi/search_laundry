@@ -7,12 +7,12 @@
   </div>
     <div class="field">
       <%= f.label :email, 'メールアドレス' %><br />
-      <%= f.email_field :email, autofocus: true, class: 'info-text' %>
+      <%= f.email_field :email, autofocus: true, class: 'info-text', placeholder: '携帯、PCどちらでも可能' %>
     </div>
 
     <div class="field">
       <%= f.label :password, 'パスワード' %><br />
-      <%= f.password_field :password, class: 'info-text' %>
+      <%= f.password_field :password, class: 'info-text', placeholder: '半角英数字混合６文字以上' %>
     </div>
 
     <%= f.submit "ログインする", class: 'actions' %>
@@ -22,7 +22,7 @@
     <%= link_to '閲覧用', users_guest_sign_in_path, method: :post, class: "test-user" %> |
     <%= link_to '管理者用', users_admin_sign_in_path, method: :post, class: "test-admin" %>
   </div>
-  <p>新規登録をしていない方は
+  <p class="send-registration">新規登録をしていない方は
     <%= link_to 'こちら', new_user_registration_path, class: "send-sign-up" %>
     へ
   </P>

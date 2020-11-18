@@ -37,6 +37,10 @@ body {
   border: 1px solid #ddd;
 }
 
+.checkbox {
+  display: inline-block;
+}
+
 .submit-btn {
   width:70px;
   height:30px; 
@@ -133,6 +137,9 @@ color:#666;
   width: 20px;
   height: 20px;
 }
+.tags {
+  min-height: 70px;
+}
 
 .tag {
   color: #fff;
@@ -171,6 +178,10 @@ color:#666;
   color: #ccc;
 }
 
+.detail-btn {
+  display: none;
+}
+
 .btn {
   width: 100%;
   margin: 0 auto;
@@ -193,4 +204,43 @@ color:#666;
 
 * {
   box-sizing: border-box;
+}
+
+/*タブレット・スマートフォン向け記述*/
+@media screen and (max-width: 1024px) {
+  .flash-message {
+    font-size: 12px;
+  }
+
+  .detail-btn {
+    display: block;
+    width: 75%;
+    margin: 10px auto;
+  }
+
+  .mask {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* 検索フォーム */
+  .search-area h1 {
+    font-size: 12px;
+  }
+  
+  .laundry_search,
+  .text-input {
+    font-size: 10px;
+  }
+
+  .store-contents-title {
+    font-size: 15px;
+  }
+
+  /* 店舗情報 */
+  .card {
+    max-width: 90%;
+    margin: 20px auto;
+  }
 }

@@ -11,8 +11,8 @@
     </div>
     <div class="tab-contents">
       <div class="tab-contents-item" data-content="0">
-        <div class="table-responsive">
-          <table class="table table-bordered">
+        <div class="table-responsive-md">
+          <table class="table table-bordered user-table">
             <thead class="thead-light">
               <tr>
                 <th scope="col">ニックネーム</th>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="tab-contents-item" data-content="1">
-        <div class="table-responsive">
+        <div class="table-responsive-md">
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
@@ -64,7 +64,7 @@
       </div>
       <div class="tab-contents-item" data-content="2">
         <%= button_to "CSV出力", admin_users_path(format: :csv), class: 'csv-button mb-2', method: :get %>
-        <div class="table-responsive">
+        <div class="table-responsive-md">
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
