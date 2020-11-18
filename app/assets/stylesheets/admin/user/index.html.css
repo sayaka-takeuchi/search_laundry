@@ -36,3 +36,23 @@
 .tab-contents-item {
   display: none;
 }
+
+@media screen and (max-width: 1023px) {
+  .tab {
+    min-height: calc(100vh - 125px);
+  }
+  
+  .tab-nav-item,
+  .table {
+    font-size: 12px;
+  }
+
+  .csv-button {
+    display: none;
+  }
+
+  .user-table td:nth-last-child(1),
+  .user-table th:nth-last-child(1) {
+    display: none;
+  }
+}
