@@ -19,7 +19,6 @@
 
 .store-box {
   width: 70vw;
-  padding: 10vh 7vh;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -54,7 +53,7 @@
 
 #map {
 height: 500px;
-width: 65%;
+width: 70%;
 margin-bottom: 30px;
 }
 
@@ -233,4 +232,47 @@ width: 100%;
 .comment > p {
   font-size: 15px;
   margin: 5px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .store-image {
+    width: 100%;
+  }
+
+  .detail-store {
+    width: 40%;
+  }
+
+  .detail-store,
+  .detail-value {
+    font-size: 10px;
+  }
+
+  #map {
+    height: 300px;
+    width: 70%;
+    margin-bottom: 0;
+    }
+
+  .map-icon {
+    height: 15px;
+    width: 15px;
+  }
+
+  .icon-info,
+  .next-btn,
+  .prev-btn,
+  .comment-field,
+  .comment-warn {
+    font-size: 12px;
+  }
+
+  .next-btn,
+  .prev-btn {
+    margin: 0;
+  }
+
+  .icon-info {
+    display: block;
+  }
 }
