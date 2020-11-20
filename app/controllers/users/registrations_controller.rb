@@ -53,8 +53,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # ゲストユーザーの場合は編集ができないように設定
   def check_guest
     if resource.email == 'user@example.com' || resource.email == 'admin@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーは編集できません。'
+      redirect_to user_path(current_user.id), alert: 'ゲストユーザーは編集できません。'
     end
+  end
+
+  # ユーザー情報編集後はマイページに遷移
+  def after_update_path_for(resource)
+    user_path(current_user.id)
   end
 
   # The path used after sign up.

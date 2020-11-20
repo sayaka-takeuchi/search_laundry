@@ -1,6 +1,10 @@
 <div class="wrapper">
+  <div class="flash-message">
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <div class="user-info">
-    <div class="info-title mt-5">
+    <div class="info-title mt-3">
       <span><%= image_tag 'user-icon.png',class: "user-icon" %></span>
       <p class="title">基本情報</p>
     </div>

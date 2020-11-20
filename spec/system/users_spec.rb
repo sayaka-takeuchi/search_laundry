@@ -109,15 +109,18 @@ RSpec.describe 'Users', type: :system do
         fill_in 'ニックネーム', with: '御村託也'
         fill_in 'メールアドレス', with: 'sample2@com'
         click_button '更新する'
+        expect(current_path).to eq user_path(@user)
         expect(page).to have_content('アカウント情報を変更しました。')
-        visit user_path(@user)
         expect(page).to have_content('御村託也')
         expect(page).to have_content('sample2@com')
       end
     end
 
     context 'ゲストログインのとき' do
-      # ゲストユーザー nickname: ゲストユーザー,email: user@example.com
+      before do
+        @user = FactoryBot.create(:user, nickname: 'ゲストユーザー', email: 'user@example.com')
+      end
+
       it '編集ができないこと' do
         visit new_user_session_path
         click_link '閲覧用'
@@ -129,9 +132,8 @@ RSpec.describe 'Users', type: :system do
         fill_in 'ニックネーム', with: 'テストユーザー'
         fill_in 'メールアドレス', with: 'user1@example.com'
         click_button '更新する'
+        expect(current_path).to eq user_path(@user)
         expect(page).to have_content('ゲストユーザーは編集できません。')
-        find('.dropdown-toggle').click
-        click_link 'マイページ'
         expect(page).to have_content('ゲストユーザー')
         expect(page).to have_content('user@example.com')
       end
