@@ -1,8 +1,5 @@
 <div class="wrapper">
-  <div class="flash-message">
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
+  <%= render partial: 'layouts/flash' %>
   <div class="user-info">
     <div class="info-title mt-3">
       <span><%= image_tag 'user-icon.png',class: "user-icon" %></span>

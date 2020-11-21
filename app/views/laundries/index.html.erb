@@ -1,9 +1,5 @@
 <div class="main">
-  <div class="flash-message">
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
-
+  <%= render partial: 'layouts/flash' %>
   <%# 検索フォーム %>
   <div class="search-area">
     <div class="search-form">
