@@ -13,5 +13,9 @@ FactoryBot.define do
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
+
+    trait :invalid do
+      name { nil }
+    end
   end
 end

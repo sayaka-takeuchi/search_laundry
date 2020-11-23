@@ -64,12 +64,24 @@ RSpec.describe 'Laundries', type: :request do
         @user = FactoryBot.create(:user, admin: true)
       end
 
-      it '店舗情報を追加できること' do
-        laundry_params = FactoryBot.attributes_for(:laundry, image: fixture_file_upload('/files/test_image.png'))
-        sign_in @user
-        expect {
-          post laundries_path, params: { laundry: laundry_params }
-      }.to change { Laundry.count }.by(1)
+      context "有効な属性値の場合" do
+        it '店舗情報を追加できること' do
+          laundry_params = FactoryBot.attributes_for(:laundry, image: fixture_file_upload('/files/test_image.png'))
+          sign_in @user
+          expect {
+            post laundries_path, params: { laundry: laundry_params }
+          }.to change { Laundry.count }.by(1)
+        end
+      end
+
+      context "無効な属性値の場合" do
+        it "店舗情報を登録できないこと" do
+          laundry_params = FactoryBot.attributes_for(:laundry, :invalid)
+          sign_in @user
+          expect {
+            post laundries_path, params: { laundry: laundry_params }
+          }.to_not change { Laundry.count }
+        end
       end
     end
 
@@ -154,13 +166,25 @@ RSpec.describe 'Laundries', type: :request do
         @laundry = FactoryBot.create(:laundry, name: 'コインランドリー名古屋店')
       end
 
-      it '店舗情報を更新できること' do
-        laundry_params = FactoryBot.attributes_for(:laundry, 
-          name: 'コインランドリー岡崎店', 
-          image: fixture_file_upload('/files/test_image.png'))
-        sign_in @user
-        patch laundry_path(@laundry), params: { laundry: laundry_params }
-        expect(@laundry.reload.name).to eq 'コインランドリー岡崎店'
+      context "有効な属性値の場合" do
+        it '店舗情報を更新できること' do
+          laundry_params = FactoryBot.attributes_for(:laundry, 
+            name: 'コインランドリー岡崎店', 
+            image: fixture_file_upload('/files/test_image.png'))
+          sign_in @user
+          patch laundry_path(@laundry), params: { laundry: laundry_params }
+          expect(@laundry.reload.name).to eq 'コインランドリー岡崎店'
+        end
+      end
+      
+      context '無効な属性値の場合' do
+        it '店舗情報を更新できないこと'
+          laundry_params = FactoryBot.attributes_for(:laundry, :invalid)
+          sign_in @user
+          expect {
+            patch laundry_path(@laundry), params: { laundry: :invalid }
+          }.to_not change { Laundry.count }
+        end
       end
     end
 
