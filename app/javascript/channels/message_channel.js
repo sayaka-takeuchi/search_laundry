@@ -10,13 +10,16 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
+    let fillZero = function(number) {
+      return ("0" + number).slice(-2);
+    }
     const now = new Date();
     const year = now.getFullYear();
-    const month = now.getMonth();
-    const date = now.getDate();
-    const hour = now.getHours();
-    const min = now.getMinutes();
-    const sendTime = `${year}/${month + 1}/${date} ${hour}:${min}`
+    const month = fillZero(now.getMonth() + 1);
+    const date = fillZero(now.getDate());
+    const hour = fillZero(now.getHours());
+    const min = fillZero(now.getMinutes());
+    const sendTime = `${year}/${month}/${date} ${hour}:${min}`
     const comment = data.text.text.replace(/\r?\n/g, '<br>');
     const form = document.getElementById('js-form');
     const messages = document.getElementById('comment-area');
