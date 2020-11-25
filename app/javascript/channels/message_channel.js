@@ -17,7 +17,7 @@ consumer.subscriptions.create("MessageChannel", {
     const year = now.getFullYear();
     const month = fillZero(now.getMonth() + 1);
     const date = fillZero(now.getDate());
-    const hour = fillZero(now.getHours());
+    const hour = now.getHours();
     const min = fillZero(now.getMinutes());
     const sendTime = `${year}/${month}/${date} ${hour}:${min}`
     const comment = data.text.text.replace(/\r?\n/g, '<br>');
