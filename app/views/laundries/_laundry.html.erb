@@ -18,16 +18,16 @@
       </p>
       <div class="tags text-center mb-3">
         <% if laundry.shoe_washing %>
-          <span class="tag">#靴が洗える</span>
+          <%= link_to '#靴が洗える', search_laundries_path(q: { shoe_washing_eq_any: 1 }),class:"tag" %>
         <% end %> 
         <% if laundry.futon_washing %>
-          <span class="tag">#敷布団が洗える</span>
-        <% end %>   
+          <%= link_to '#敷布団が洗える', search_laundries_path(q: { futon_washing_eq_any: 1 }),class:"tag" %>
+        <% end %>
         <% if laundry.dryer %>
-          <span class="tag">#乾燥機有</span>
+          <%= link_to '#乾燥機有', search_laundries_path(q: { dryer_eq_any: 1 }),class:"tag" %>
         <% end %> 
         <% if laundry.washing_machine %>
-          <span class="tag">#洗濯機有</span>
+          <%= link_to '#洗濯機有', search_laundries_path(q: { washing_machine_eq_any: 1 }),class:"tag" %>
         <% end %> 
       </div>
       <div class="average-score mb-3">

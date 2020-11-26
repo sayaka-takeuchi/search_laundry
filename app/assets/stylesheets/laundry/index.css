@@ -151,6 +151,13 @@ color:#666;
   display: inline-block;
   margin-top: 5px;
   font-weight: bold;
+  transition: .3s;
+}
+
+.tag:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #001961;
 }
 
 .average-score {
