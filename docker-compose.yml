@@ -14,7 +14,7 @@ services:
       - "3306:3306"
       # データを永続化する(ホスト側のdb/mysql/volumesをコンテナ側の/var/lib/mysqlに同期する)
     volumes:
-      - ./db/mysql/volumes:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
 
   web:
     build: .
