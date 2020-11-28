@@ -67,20 +67,8 @@ color:#666;
   width: 80%;
 }
 
-.store-contents-title,
-.send-new-page {
+.store-contents-title {
   font-size: 25px;
-}
-
-.send-new-page {
-  text-decoration: none;
-  color: #666;
-  margin-left: 10px;
-}
-
-.send-new-page:hover {
-  color: #000;
-  text-decoration: none;
 }
 
 .store-lists {
@@ -127,6 +115,7 @@ color:#666;
 }
 
 /* 店舗住所 */
+.card-body p:first-child, 
 .card-body p:nth-child(2){
   overflow: hidden;
   white-space: nowrap;
