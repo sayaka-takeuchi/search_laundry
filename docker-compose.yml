@@ -6,7 +6,9 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_USER: root
+      MYSQL_PASSWORD:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: search_laundry_development
       # 仮想コンテナにアクセスするためのポート番号
     ports:
       - "3306:3306"
@@ -30,3 +32,6 @@ services:
       - db 
     tty: true
     stdin_open: true
+volumes:
+  mysql-data:
+    driver: local
