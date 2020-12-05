@@ -41,7 +41,7 @@ RSpec.describe '店舗情報登録', type: :system do
     end
     it '登録ボタンが表示されない' do
       visit root_path
-      expect(page).to have_no_selector('.send-new-page')
+      expect(page).to have_no_content('店舗登録')
     end
   end
 end
@@ -136,7 +136,7 @@ RSpec.describe '店舗情報削除', type: :system do
     )
   end
   context '管理者の場合' do
-    it '店舗情報の削除ができる' do
+    it '店舗情報の削除ができる', js: true do
       sign_in(@admin)
       expect(page).to have_content('コインランドリー１号店')
       expect(page).to have_content('愛知県名古屋市1-10')
@@ -150,7 +150,7 @@ RSpec.describe '店舗情報削除', type: :system do
       expect(page).to have_no_content('愛知県名古屋市1-10')
       expect(page).to have_no_content('2020/10/31')
     end
-    it '店舗情報の削除をやめる' do
+    it '店舗情報の削除をやめる' , js: true do
       sign_in(@admin)
       click_link '削除'
       expect do
